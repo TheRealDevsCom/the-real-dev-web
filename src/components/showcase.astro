@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
 import ContentSection from "~/components/content-section.astro";
 import ShowcaseCard from "~/components/showcase-card.astro";
@@ -27,5 +28,16 @@ const orderedSites = featuredSites.sort(
         ...and more &rarr;
       </a>
     </p>
+  </div>
+
+  <!-- CTA to Portfolio Page -->
+  <div class="mt-8 text-center">
+    <a
+      href="/portafolio"
+      class="inline-flex items-center gap-2 rounded-lg border-2 border-primary bg-transparent px-6 py-3 font-bold text-primary transition-all hover:bg-primary hover:text-white"
+    >
+      <span>Ver Portafolio Completo</span>
+      <Icon name="mdi:arrow-right" class="size-5" />
+    </a>
   </div>
 </ContentSection>

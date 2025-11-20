@@ -1,0 +1,191 @@
+---
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import ContentSection from "~/components/content-section.astro";
+import { Icon } from "astro-icon/components";
+import SpriteIcon from "~/components/sprite-icon.astro";
+---
+
+<BaseLayout
+    title="Nosotros - TheRealDevs"
+    description="Conoce a TheRealDevs, tu socio en desarrollo de software e innovación tecnológica."
+>
+    <div class="space-y-24 px-8 py-32">
+        <ContentSection title="Sobre Nosotros" id="nosotros">
+            <SpriteIcon slot="eyebrow" name="logomark" class="size-32" />
+            <Fragment slot="lead">
+                Somos un equipo de <span class="text-primary"
+                    >desarrolladores apasionados</span
+                >
+                comprometidos con la <span class="text-primary">excelencia</span
+                > y la innovación.
+            </Fragment>
+
+            <!-- Mission & Vision -->
+            <div class="grid gap-8 md:grid-cols-2">
+                <div
+                    class="border-primary/30 rounded-lg border-2 bg-offset p-8"
+                >
+                    <div class="mb-4 flex items-center gap-4">
+                        <Icon name="mdi:target" class="size-12 text-primary" />
+                        <h3 class="font-bold text-2xl">Nuestra Misión</h3>
+                    </div>
+                    <p class="text-offset text-lg">
+                        Transformar ideas en soluciones tecnológicas innovadoras
+                        que impulsen el crecimiento de nuestros clientes,
+                        utilizando las mejores prácticas de desarrollo y
+                        tecnologías de vanguardia.
+                    </p>
+                </div>
+
+                <div
+                    class="border-primary/30 rounded-lg border-2 bg-offset p-8"
+                >
+                    <div class="mb-4 flex items-center gap-4">
+                        <Icon name="mdi:eye" class="size-12 text-primary" />
+                        <h3 class="font-bold text-2xl">Nuestra Visión</h3>
+                    </div>
+                    <p class="text-offset text-lg">
+                        Ser la agencia de desarrollo de software líder en la
+                        región, reconocida por nuestra calidad, innovación y
+                        compromiso con el éxito de nuestros clientes.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Values -->
+            <div class="mt-16">
+                <h3 class="mb-8 text-center font-bold text-3xl">
+                    Nuestros Valores
+                </h3>
+                <div class="grid gap-6 md:grid-cols-3">
+                    <div
+                        class="flex flex-col items-center gap-4 rounded-lg border border-default bg-offset p-6 text-center"
+                    >
+                        <div class="rounded-full border-2 border-primary p-4">
+                            <Icon
+                                name="mdi:lightbulb"
+                                class="size-10 text-primary"
+                            />
+                        </div>
+                        <h4 class="font-bold text-xl">Innovación</h4>
+                        <p class="text-offset">
+                            Buscamos constantemente nuevas formas de resolver
+                            problemas y mejorar procesos.
+                        </p>
+                    </div>
+
+                    <div
+                        class="flex flex-col items-center gap-4 rounded-lg border border-default bg-offset p-6 text-center"
+                    >
+                        <div class="rounded-full border-2 border-primary p-4">
+                            <Icon
+                                name="mdi:shield-check"
+                                class="size-10 text-primary"
+                            />
+                        </div>
+                        <h4 class="font-bold text-xl">Calidad</h4>
+                        <p class="text-offset">
+                            Nos comprometemos a entregar productos de la más
+                            alta calidad en cada proyecto.
+                        </p>
+                    </div>
+
+                    <div
+                        class="flex flex-col items-center gap-4 rounded-lg border border-default bg-offset p-6 text-center"
+                    >
+                        <div class="rounded-full border-2 border-primary p-4">
+                            <Icon
+                                name="mdi:handshake"
+                                class="size-10 text-primary"
+                            />
+                        </div>
+                        <h4 class="font-bold text-xl">Compromiso</h4>
+                        <p class="text-offset">
+                            El éxito de nuestros clientes es nuestro éxito.
+                            Trabajamos como verdaderos socios.
+                        </p>
+                    </div>
+
+                    <div
+                        class="flex flex-col items-center gap-4 rounded-lg border border-default bg-offset p-6 text-center"
+                    >
+                        <div class="rounded-full border-2 border-primary p-4">
+                            <Icon
+                                name="mdi:account-group"
+                                class="size-10 text-primary"
+                            />
+                        </div>
+                        <h4 class="font-bold text-xl">Colaboración</h4>
+                        <p class="text-offset">
+                            Creemos en el poder del trabajo en equipo y la
+                            comunicación abierta.
+                        </p>
+                    </div>
+
+                    <div
+                        class="flex flex-col items-center gap-4 rounded-lg border border-default bg-offset p-6 text-center"
+                    >
+                        <div class="rounded-full border-2 border-primary p-4">
+                            <Icon
+                                name="mdi:school"
+                                class="size-10 text-primary"
+                            />
+                        </div>
+                        <h4 class="font-bold text-xl">Aprendizaje</h4>
+                        <p class="text-offset">
+                            Nos mantenemos actualizados con las últimas
+                            tecnologías y tendencias.
+                        </p>
+                    </div>
+
+                    <div
+                        class="flex flex-col items-center gap-4 rounded-lg border border-default bg-offset p-6 text-center"
+                    >
+                        <div class="rounded-full border-2 border-primary p-4">
+                            <Icon
+                                name="mdi:heart"
+                                class="size-10 text-primary"
+                            />
+                        </div>
+                        <h4 class="font-bold text-xl">Pasión</h4>
+                        <p class="text-offset">
+                            Amamos lo que hacemos y eso se refleja en cada línea
+                            de código.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="mt-16 grid gap-8 md:grid-cols-4">
+                <div class="text-center">
+                    <div class="mb-2 font-bold text-primary text-5xl">10+</div>
+                    <div class="text-offset">Años de Experiencia</div>
+                </div>
+                <div class="text-center">
+                    <div class="mb-2 font-bold text-primary text-5xl">100+</div>
+                    <div class="text-offset">Proyectos Completados</div>
+                </div>
+                <div class="text-center">
+                    <div class="mb-2 font-bold text-primary text-5xl">50+</div>
+                    <div class="text-offset">Clientes Satisfechos</div>
+                </div>
+                <div class="text-center">
+                    <div class="mb-2 font-bold text-primary text-5xl">20+</div>
+                    <div class="text-offset">Desarrolladores Expertos</div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="mt-12 text-center">
+                <a
+                    href="/contacto"
+                    class="hover:bg-primary/90 inline-flex items-center gap-3 rounded-lg bg-primary px-8 py-4 font-bold text-white transition-all hover:shadow-lg"
+                >
+                    <Icon name="mdi:email" class="size-6" />
+                    <span>Trabajemos Juntos</span>
+                </a>
+            </div>
+        </ContentSection>
+    </div>
+</BaseLayout>

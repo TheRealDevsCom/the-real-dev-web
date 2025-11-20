@@ -1,0 +1,13 @@
+---
+interface Props {
+    name: string;
+    class?: string;
+    id?: string;
+}
+
+const { name, class: className, id } = Astro.props;
+---
+
+<svg class={className} id={id}>
+    <use href={`/sprite.svg#${name}`}></use>
+</svg>

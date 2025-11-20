@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon/components";
 import CompatibilityList from "~/components/compatibility-list.astro";
 import ContentSection from "~/components/content-section.astro";
 import type { CompatibilityItem } from "~/types";
@@ -86,4 +87,15 @@ const platforms: Array<CompatibilityItem> = [
     title="Platforms"
     url="https://docs.astro.build/guides/deploy/"
   />
+
+  <!-- CTA to Products Page -->
+  <div class="mt-8 text-center">
+    <a
+      href="/productos"
+      class="inline-flex items-center gap-2 rounded-lg border-2 border-primary bg-transparent px-6 py-3 font-bold text-primary transition-all hover:bg-primary hover:text-white"
+    >
+      <span>Conocer Productos Frontline</span>
+      <Icon name="mdi:arrow-right" class="size-5" />
+    </a>
+  </div>
 </ContentSection>

@@ -1,0 +1,70 @@
+---
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import ContactForm from "~/components/contact-form.astro";
+import ContentSection from "~/components/content-section.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<BaseLayout
+    title="Contacto - TheRealDevs"
+    description="Contáctanos para cotizar tu proyecto o agendar una reunión. Estamos listos para ayudarte a hacer realidad tus ideas."
+>
+    <div class="space-y-24 px-8 py-32">
+        <ContentSection title="Contáctanos" id="contacto">
+            <Fragment slot="lead">
+                ¿Tienes un proyecto en mente? <span class="text-primary"
+                    >Hablemos</span
+                >. Estamos listos para <span class="text-primary">ayudarte</span
+                > a hacer realidad tus ideas.
+            </Fragment>
+
+            <ContactForm />
+
+            <!-- Contact Information -->
+            <div class="mt-16 grid gap-8 md:grid-cols-3">
+                <div
+                    class="flex flex-col items-center gap-4 rounded-lg border border-default bg-offset p-6"
+                >
+                    <div class="rounded-full border-2 border-primary p-4">
+                        <Icon name="mdi:email" class="size-8 text-primary" />
+                    </div>
+                    <h3 class="font-bold text-xl">Email</h3>
+                    <a
+                        href="mailto:contacto@therealdevs.com"
+                        class="text-primary hover:underline"
+                    >
+                        contacto@therealdevs.com
+                    </a>
+                </div>
+
+                <div
+                    class="flex flex-col items-center gap-4 rounded-lg border border-default bg-offset p-6"
+                >
+                    <div class="rounded-full border-2 border-primary p-4">
+                        <Icon name="mdi:phone" class="size-8 text-primary" />
+                    </div>
+                    <h3 class="font-bold text-xl">Teléfono</h3>
+                    <a
+                        href="tel:+50588888888"
+                        class="text-primary hover:underline"
+                    >
+                        +505 8888-8888
+                    </a>
+                </div>
+
+                <div
+                    class="flex flex-col items-center gap-4 rounded-lg border border-default bg-offset p-6"
+                >
+                    <div class="rounded-full border-2 border-primary p-4">
+                        <Icon
+                            name="mdi:map-marker"
+                            class="size-8 text-primary"
+                        />
+                    </div>
+                    <h3 class="font-bold text-xl">Ubicación</h3>
+                    <p class="text-center">Managua, Nicaragua</p>
+                </div>
+            </div>
+        </ContentSection>
+    </div>
+</BaseLayout>

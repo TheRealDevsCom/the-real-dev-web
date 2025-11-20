@@ -1,29 +1,31 @@
 ---
-import { Icon } from 'astro-icon/components'
-import ContentSection from '~/components/content-section.astro'
+import SpriteIcon from "~/components/sprite-icon.astro";
+import ContentSection from "~/components/content-section.astro";
 ---
 
 <ContentSection title="Somos The Real Devs" id="intro">
-  <Icon slot="eyebrow" name="logomark" class="size-72" />
+  <SpriteIcon slot="eyebrow" name="logomark" class="size-72" />
   <Fragment slot="lead">
     Una agencia de desarrollo especializada en sistemas
     <span class="text-primary">empresariales,</span>Pyme,
     <span class="text-primary">Salesforce</span>
-    integraciones <span class="text-primary">y plataformas web de alto rendimiento.</span>
+    integraciones <span class="text-primary"
+      >y plataformas web de alto rendimiento.</span
+    >
   </Fragment>
   <div class="grid grid-cols-1 gap-2 sm:grid-cols-2">
     <a
-      href="https://docs.astro.build/"
-      class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
+      href="/contacto#cotizar"
+      class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4 transition-all hover:bg-primary hover:text-white"
     >
-      <Icon name="mdi:telescope" class="size-8" />
+      <SpriteIcon name="mdi:telescope" class="size-8" />
       <span>Cotizar Proyecto</span>
     </a>
     <a
-      href="https://astro.new/"
-      class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
+      href="/contacto#agendar"
+      class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4 transition-all hover:bg-primary hover:text-white"
     >
-      <Icon name="mdi:rocket" class="size-8" />
+      <SpriteIcon name="mdi:rocket" class="size-8" />
       <span>Agenda una reunión</span>
     </a>
   </div>

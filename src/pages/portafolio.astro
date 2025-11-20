@@ -1,0 +1,230 @@
+---
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import Showcase from "~/components/showcase.astro";
+import ContentSection from "~/components/content-section.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<BaseLayout
+    title="Portafolio - TheRealDevs"
+    description="Conoce nuestros proyectos exitosos y casos de éxito en desarrollo de software."
+>
+    <div class="space-y-24 px-8 py-32">
+        <ContentSection title="Nuestro Portafolio" id="portafolio">
+            <Icon
+                slot="eyebrow"
+                name="mdi:briefcase"
+                class="size-32 text-primary"
+            />
+            <Fragment slot="lead">
+                Proyectos <span class="text-primary">exitosos</span> que demuestran
+                nuestra <span class="text-primary">experiencia</span> y compromiso
+                con la excelencia.
+            </Fragment>
+
+            <Showcase />
+
+            <!-- Additional Portfolio Items -->
+            <div class="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <div
+                    class="group overflow-hidden rounded-lg border border-default bg-offset transition-all hover:border-primary hover:shadow-xl"
+                >
+                    <div
+                        class="aspect-video bg-gradient-to-br from-blue-500 to-cyan-500"
+                    >
+                    </div>
+                    <div class="p-6">
+                        <h3 class="mb-2 font-bold text-xl">
+                            Sistema ERP Empresarial
+                        </h3>
+                        <p class="mb-4 text-offset text-sm">
+                            Desarrollo completo de sistema de gestión
+                            empresarial para empresa manufacturera.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="bg-primary/20 rounded-full px-3 py-1 text-primary text-xs"
+                                >React</span
+                            >
+                            <span
+                                class="bg-primary/20 rounded-full px-3 py-1 text-primary text-xs"
+                                >Node.js</span
+                            >
+                            <span
+                                class="bg-primary/20 rounded-full px-3 py-1 text-primary text-xs"
+                                >PostgreSQL</span
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="group overflow-hidden rounded-lg border border-default bg-offset transition-all hover:border-primary hover:shadow-xl"
+                >
+                    <div
+                        class="aspect-video bg-gradient-to-br from-slate-500 to-blue-600"
+                    >
+                    </div>
+                    <div class="p-6">
+                        <h3 class="mb-2 font-bold text-xl">
+                            App Móvil de Delivery
+                        </h3>
+                        <p class="mb-4 text-offset text-sm">
+                            Aplicación móvil multiplataforma para servicio de
+                            entrega a domicilio.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="bg-primary/20 rounded-full px-3 py-1 text-primary text-xs"
+                                >React Native</span
+                            >
+                            <span
+                                class="bg-primary/20 rounded-full px-3 py-1 text-primary text-xs"
+                                >Firebase</span
+                            >
+                            <span
+                                class="bg-primary/20 rounded-full px-3 py-1 text-primary text-xs"
+                                >Maps API</span
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="group overflow-hidden rounded-lg border border-default bg-offset transition-all hover:border-primary hover:shadow-xl"
+                >
+                    <div
+                        class="aspect-video bg-gradient-to-br from-cyan-500 to-slate-600"
+                    >
+                    </div>
+                    <div class="p-6">
+                        <h3 class="mb-2 font-bold text-xl">
+                            Integración Salesforce
+                        </h3>
+                        <p class="mb-4 text-offset text-sm">
+                            Integración completa de Salesforce con sistemas
+                            legacy de cliente corporativo.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="bg-primary/20 rounded-full px-3 py-1 text-primary text-xs"
+                                >Salesforce</span
+                            >
+                            <span
+                                class="bg-primary/20 rounded-full px-3 py-1 text-primary text-xs"
+                                >Apex</span
+                            >
+                            <span
+                                class="bg-primary/20 rounded-full px-3 py-1 text-primary text-xs"
+                                >REST API</span
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="group overflow-hidden rounded-lg border border-default bg-offset transition-all hover:border-primary hover:shadow-xl"
+                >
+                    <div
+                        class="aspect-video bg-gradient-to-br from-blue-600 to-cyan-400"
+                    >
+                    </div>
+                    <div class="p-6">
+                        <h3 class="mb-2 font-bold text-xl">E-commerce B2B</h3>
+                        <p class="mb-4 text-offset text-sm">
+                            Plataforma de comercio electrónico B2B con gestión
+                            de catálogos y pedidos.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="bg-primary/20 rounded-full px-3 py-1 text-primary text-xs"
+                                >Next.js</span
+                            >
+                            <span
+                                class="bg-primary/20 rounded-full px-3 py-1 text-primary text-xs"
+                                >Stripe</span
+                            >
+                            <span
+                                class="bg-primary/20 rounded-full px-3 py-1 text-primary text-xs"
+                                >MongoDB</span
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="group overflow-hidden rounded-lg border border-default bg-offset transition-all hover:border-primary hover:shadow-xl"
+                >
+                    <div
+                        class="aspect-video bg-gradient-to-br from-slate-600 to-blue-500"
+                    >
+                    </div>
+                    <div class="p-6">
+                        <h3 class="mb-2 font-bold text-xl">
+                            Dashboard Analytics
+                        </h3>
+                        <p class="mb-4 text-offset text-sm">
+                            Sistema de visualización de datos y métricas en
+                            tiempo real para fintech.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="bg-primary/20 rounded-full px-3 py-1 text-primary text-xs"
+                                >Vue.js</span
+                            >
+                            <span
+                                class="bg-primary/20 rounded-full px-3 py-1 text-primary text-xs"
+                                >D3.js</span
+                            >
+                            <span
+                                class="bg-primary/20 rounded-full px-3 py-1 text-primary text-xs"
+                                >WebSocket</span
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="group overflow-hidden rounded-lg border border-default bg-offset transition-all hover:border-primary hover:shadow-xl"
+                >
+                    <div
+                        class="aspect-video bg-gradient-to-br from-cyan-400 to-slate-700"
+                    >
+                    </div>
+                    <div class="p-6">
+                        <h3 class="mb-2 font-bold text-xl">Portal Educativo</h3>
+                        <p class="mb-4 text-offset text-sm">
+                            Plataforma de e-learning con gestión de cursos,
+                            estudiantes y certificaciones.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="bg-primary/20 rounded-full px-3 py-1 text-primary text-xs"
+                                >Laravel</span
+                            >
+                            <span
+                                class="bg-primary/20 rounded-full px-3 py-1 text-primary text-xs"
+                                >Vue.js</span
+                            >
+                            <span
+                                class="bg-primary/20 rounded-full px-3 py-1 text-primary text-xs"
+                                >MySQL</span
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="mt-12 text-center">
+                <a
+                    href="/contacto"
+                    class="hover:bg-primary/90 inline-flex items-center gap-3 rounded-lg bg-primary px-8 py-4 font-bold text-white transition-all hover:shadow-lg"
+                >
+                    <Icon name="mdi:rocket" class="size-6" />
+                    <span>Inicia Tu Proyecto</span>
+                </a>
+            </div>
+        </ContentSection>
+    </div>
+</BaseLayout>

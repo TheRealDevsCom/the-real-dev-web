@@ -1,0 +1,164 @@
+---
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import ContentSection from "~/components/content-section.astro";
+import { Icon } from "astro-icon/components";
+
+const blogPosts = [
+    {
+        title: "Las Mejores Prácticas en Desarrollo Web 2024",
+        excerpt:
+            "Descubre las tendencias y mejores prácticas que están definiendo el desarrollo web moderno.",
+        date: "2024-01-15",
+        category: "Desarrollo Web",
+        author: "TheRealDevs Team",
+    },
+    {
+        title: "Cómo Elegir la Tecnología Correcta para tu Proyecto",
+        excerpt:
+            "Guía completa para seleccionar el stack tecnológico ideal según tus necesidades.",
+        date: "2024-01-10",
+        category: "Tecnología",
+        author: "TheRealDevs Team",
+    },
+    {
+        title: "Salesforce: Maximizando el ROI de tu Inversión",
+        excerpt:
+            "Estrategias probadas para obtener el máximo valor de tu implementación de Salesforce.",
+        date: "2024-01-05",
+        category: "Salesforce",
+        author: "TheRealDevs Team",
+    },
+];
+---
+
+<BaseLayout
+    title="Blog - TheRealDevs"
+    description="Artículos, tutoriales y recursos sobre desarrollo de software, tecnología y mejores prácticas."
+>
+    <div class="space-y-24 px-8 py-32">
+        <ContentSection title="Blog" id="blog">
+            <Icon slot="eyebrow" name="mdi:post" class="size-32 text-primary" />
+            <Fragment slot="lead">
+                Artículos, tutoriales y <span class="text-primary"
+                    >recursos</span
+                > sobre desarrollo de software y <span class="text-primary"
+                    >tecnología</span
+                >.
+            </Fragment>
+
+            <!-- Blog Posts -->
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                {
+                    blogPosts.map((post) => (
+                        <article class="group overflow-hidden rounded-lg border border-default bg-offset transition-all hover:border-primary hover:shadow-xl">
+                            <div class="aspect-video bg-gradient-to-br from-blue-500 to-cyan-500" />
+                            <div class="p-6">
+                                <div class="mb-3 flex items-center gap-2 text-primary text-sm">
+                                    <Icon name="mdi:calendar" class="size-4" />
+                                    <time datetime={post.date}>
+                                        {new Date(post.date).toLocaleDateString(
+                                            "es-ES",
+                                            {
+                                                year: "numeric",
+                                                month: "long",
+                                                day: "numeric",
+                                            },
+                                        )}
+                                    </time>
+                                </div>
+                                <span class="bg-primary/20 mb-3 inline-block rounded-full px-3 py-1 text-primary text-xs">
+                                    {post.category}
+                                </span>
+                                <h3 class="mb-3 font-bold transition-colors text-xl group-hover:text-primary">
+                                    {post.title}
+                                </h3>
+                                <p class="mb-4 text-offset text-sm">
+                                    {post.excerpt}
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-offset text-sm">
+                                        Por {post.author}
+                                    </span>
+                                    <a
+                                        href="#"
+                                        class="flex items-center gap-1 font-semibold text-primary transition-all text-sm hover:gap-2"
+                                    >
+                                        Leer más
+                                        <Icon
+                                            name="mdi:arrow-right"
+                                            class="size-4"
+                                        />
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    ))
+                }
+            </div>
+
+            <!-- Coming Soon Message -->
+            <div
+                class="border-primary/30 mt-12 rounded-lg border-2 bg-offset p-8 text-center"
+            >
+                <Icon
+                    name="mdi:rocket-launch"
+                    class="mx-auto mb-4 size-16 text-primary"
+                />
+                <h3 class="mb-3 font-bold text-2xl">
+                    Más Contenido Próximamente
+                </h3>
+                <p class="mx-auto max-w-2xl text-offset">
+                    Estamos trabajando en más artículos y recursos para ayudarte
+                    en tu viaje de desarrollo. Suscríbete a nuestro newsletter
+                    para recibir las últimas actualizaciones.
+                </p>
+                <div class="mt-6">
+                    <a
+                        href="/contacto"
+                        class="hover:bg-primary/90 inline-flex items-center gap-3 rounded-lg bg-primary px-8 py-3 font-bold text-white transition-all"
+                    >
+                        <Icon name="mdi:email" class="size-5" />
+                        <span>Suscribirse</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Categories -->
+            <div class="mt-16">
+                <h3 class="mb-6 text-center font-bold text-2xl">Categorías</h3>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a
+                        href="#"
+                        class="hover:bg-primary/90 rounded-full border-2 border-primary bg-primary px-6 py-2 font-semibold text-white transition-all"
+                    >
+                        Todos
+                    </a>
+                    <a
+                        href="#"
+                        class="hover:bg-primary/10 rounded-full border-2 border-primary bg-transparent px-6 py-2 font-semibold text-primary transition-all"
+                    >
+                        Desarrollo Web
+                    </a>
+                    <a
+                        href="#"
+                        class="hover:bg-primary/10 rounded-full border-2 border-primary bg-transparent px-6 py-2 font-semibold text-primary transition-all"
+                    >
+                        Tecnología
+                    </a>
+                    <a
+                        href="#"
+                        class="hover:bg-primary/10 rounded-full border-2 border-primary bg-transparent px-6 py-2 font-semibold text-primary transition-all"
+                    >
+                        Salesforce
+                    </a>
+                    <a
+                        href="#"
+                        class="hover:bg-primary/10 rounded-full border-2 border-primary bg-transparent px-6 py-2 font-semibold text-primary transition-all"
+                    >
+                        Tutoriales
+                    </a>
+                </div>
+            </div>
+        </ContentSection>
+    </div>
+</BaseLayout>

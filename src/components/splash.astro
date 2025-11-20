@@ -1,13 +1,13 @@
 ---
-import { Image } from 'astro:assets'
-import { Icon } from 'astro-icon/components'
-import developerImage from '~/assets/heroSectionPhoto.webp'
-import HeroImage from '~/components/hero-image.astro'
-import Starfield from '~/components/starfield.astro'
-import GitHubCorner from './github-corner.astro'
+import { Image } from "astro:assets";
+import SpriteIcon from "~/components/sprite-icon.astro";
+import developerImage from "~/assets/heroSectionPhoto.webp";
+import HeroImage from "~/components/hero-image.astro";
+import Starfield from "~/components/starfield.astro";
+import GitHubCorner from "./github-corner.astro";
 
-const widths = [450, 800]
-const sizes = '(min-width: 640px) 42vw, 67vw'
+const widths = [450, 800];
+const sizes = "(min-width: 640px) 42vw, 67vw";
 ---
 
 <section class="relative h-full bg-black">
@@ -17,21 +17,36 @@ const sizes = '(min-width: 640px) 42vw, 67vw'
     <HeroImage />
   </div>
   <div class="relative grid h-full place-items-center sm:grid-cols-2">
-    <h2 class="flex flex-col items-center gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end">
-      <Icon name="logomark" class="size-20 text-white md:size-72" />
+    <h2
+      class="flex flex-col items-center gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end"
+    >
+      <SpriteIcon
+        name="logomark"
+        class="size-20 text-white md:size-32"
+        id="devimage"
+      />
       <div
         class="animate-gradient gradient-text text-center font-extrabold tracking-tighter text-6xl md:text-5xl"
       >
         Innovación En Desarollo de
         <br /> Software.
       </div>
+      <!-- CTA Button -->
+      <a
+        href="/contacto#cotizar"
+        class="hover:bg-primary/90 mt-4 inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 font-bold text-white shadow-lg transition-all hover:scale-105 hover:shadow-xl sm:mt-6 sm:px-8 sm:py-4"
+      >
+        <SpriteIcon name="mdi:rocket" class="size-5 sm:size-6" />
+        <span class="text-sm sm:text-base">Cotizar Ahora</span>
+      </a>
     </h2>
+    <!-- seccion de imagen hero secion IA computer -->
     <div
-      id="devimage"
+      id="devimagee"
       class="w-2/4 max-w-3xl self-start sm:w-10/12 sm:self-auto sm:justify-self-start"
     >
       <Image
-        class="h-full w-full object-scale-down"
+        class="h-full w-full object-cover"
         src={developerImage}
         widths={widths}
         sizes={sizes}

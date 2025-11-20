@@ -1,0 +1,95 @@
+---
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import Features from "~/components/features.astro";
+import ContentSection from "~/components/content-section.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<BaseLayout
+    title="Servicios - TheRealDevs"
+    description="Servicios de desarrollo de software empresarial, aplicaciones web, móviles, integraciones Salesforce y más."
+>
+    <div class="space-y-24 px-8 py-32">
+        <ContentSection title="Nuestros Servicios" id="servicios">
+            <Icon slot="eyebrow" name="mdi:cog" class="size-32 text-primary" />
+            <Fragment slot="lead">
+                Ofrecemos soluciones <span class="text-primary">completas</span>
+                de desarrollo de software para <span class="text-primary"
+                    >empresas</span
+                > de todos los tamaños.
+            </Fragment>
+
+            <Features />
+
+            <!-- Additional Services Details -->
+            <div class="mt-16 grid gap-8 md:grid-cols-2">
+                <div class="rounded-lg border border-default bg-offset p-8">
+                    <div class="mb-4 flex items-center gap-4">
+                        <Icon name="mdi:web" class="size-12 text-primary" />
+                        <h3 class="font-bold text-2xl">Desarrollo Web</h3>
+                    </div>
+                    <p class="text-offset">
+                        Creamos aplicaciones web modernas, rápidas y escalables
+                        utilizando las últimas tecnologías. Desde landing pages
+                        hasta sistemas empresariales complejos.
+                    </p>
+                </div>
+
+                <div class="rounded-lg border border-default bg-offset p-8">
+                    <div class="mb-4 flex items-center gap-4">
+                        <Icon
+                            name="mdi:cellphone"
+                            class="size-12 text-primary"
+                        />
+                        <h3 class="font-bold text-2xl">Aplicaciones Móviles</h3>
+                    </div>
+                    <p class="text-offset">
+                        Desarrollamos apps nativas y multiplataforma para iOS y
+                        Android que ofrecen experiencias de usuario
+                        excepcionales.
+                    </p>
+                </div>
+
+                <div class="rounded-lg border border-default bg-offset p-8">
+                    <div class="mb-4 flex items-center gap-4">
+                        <Icon name="mdi:cloud" class="size-12 text-primary" />
+                        <h3 class="font-bold text-2xl">
+                            Integración Salesforce
+                        </h3>
+                    </div>
+                    <p class="text-offset">
+                        Especialistas en implementación, personalización e
+                        integración de Salesforce con tus sistemas existentes.
+                    </p>
+                </div>
+
+                <div class="rounded-lg border border-default bg-offset p-8">
+                    <div class="mb-4 flex items-center gap-4">
+                        <Icon
+                            name="mdi:database"
+                            class="size-12 text-primary"
+                        />
+                        <h3 class="font-bold text-2xl">
+                            Sistemas Empresariales
+                        </h3>
+                    </div>
+                    <p class="text-offset">
+                        Soluciones ERP, CRM y sistemas a medida para optimizar
+                        los procesos de tu empresa y aumentar la productividad.
+                    </p>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="mt-12 text-center">
+                <a
+                    href="/contacto"
+                    class="hover:bg-primary/90 inline-flex items-center gap-3 rounded-lg bg-primary px-8 py-4 font-bold text-white transition-all hover:shadow-lg"
+                >
+                    <Icon name="mdi:rocket" class="size-6" />
+                    <span>Solicitar Cotización</span>
+                </a>
+            </div>
+        </ContentSection>
+    </div>
+</BaseLayout>

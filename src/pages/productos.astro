@@ -1,0 +1,201 @@
+---
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import Compatibility from "~/components/compatibility.astro";
+import ContentSection from "~/components/content-section.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<BaseLayout
+    title="Productos Frontline - TheRealDevs"
+    description="Nuestros productos y soluciones tecnológicas de vanguardia para empresas modernas."
+>
+    <div class="space-y-24 px-8 py-32">
+        <ContentSection title="Productos Frontline" id="productos">
+            <Icon
+                slot="eyebrow"
+                name="mdi:package-variant"
+                class="size-32 text-primary"
+            />
+            <Fragment slot="lead">
+                Soluciones <span class="text-primary">innovadoras</span> y productos
+                <span class="text-primary">listos para usar</span> que impulsan tu
+                negocio.
+            </Fragment>
+
+            <Compatibility />
+
+            <!-- Product Highlights -->
+            <div class="mt-16 space-y-8">
+                <div
+                    class="border-primary/30 rounded-lg border-2 bg-offset p-8"
+                >
+                    <div class="mb-6 flex items-start justify-between">
+                        <div>
+                            <h3 class="mb-2 font-bold text-3xl">
+                                Frontline CRM
+                            </h3>
+                            <p class="text-primary text-xl">
+                                Sistema de Gestión de Clientes
+                            </p>
+                        </div>
+                        <Icon
+                            name="mdi:account-group"
+                            class="size-16 text-primary"
+                        />
+                    </div>
+                    <p class="mb-4 text-offset text-lg">
+                        Gestiona tus relaciones con clientes de manera
+                        eficiente. Incluye seguimiento de ventas, automatización
+                        de marketing, y análisis en tiempo real.
+                    </p>
+                    <ul class="grid gap-3 md:grid-cols-2">
+                        <li class="flex items-center gap-2">
+                            <Icon
+                                name="mdi:check-circle"
+                                class="size-5 text-primary"
+                            />
+                            <span>Dashboard intuitivo</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <Icon
+                                name="mdi:check-circle"
+                                class="size-5 text-primary"
+                            />
+                            <span>Automatización de procesos</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <Icon
+                                name="mdi:check-circle"
+                                class="size-5 text-primary"
+                            />
+                            <span>Reportes personalizados</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <Icon
+                                name="mdi:check-circle"
+                                class="size-5 text-primary"
+                            />
+                            <span>Integración con email</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div
+                    class="border-primary/30 rounded-lg border-2 bg-offset p-8"
+                >
+                    <div class="mb-6 flex items-start justify-between">
+                        <div>
+                            <h3 class="mb-2 font-bold text-3xl">
+                                Frontline Commerce
+                            </h3>
+                            <p class="text-primary text-xl">
+                                Plataforma de E-commerce
+                            </p>
+                        </div>
+                        <Icon name="mdi:cart" class="size-16 text-primary" />
+                    </div>
+                    <p class="mb-4 text-offset text-lg">
+                        Plataforma completa de comercio electrónico con gestión
+                        de inventario, pagos seguros, y experiencia de compra
+                        optimizada.
+                    </p>
+                    <ul class="grid gap-3 md:grid-cols-2">
+                        <li class="flex items-center gap-2">
+                            <Icon
+                                name="mdi:check-circle"
+                                class="size-5 text-primary"
+                            />
+                            <span>Carrito de compras avanzado</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <Icon
+                                name="mdi:check-circle"
+                                class="size-5 text-primary"
+                            />
+                            <span>Pasarelas de pago múltiples</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <Icon
+                                name="mdi:check-circle"
+                                class="size-5 text-primary"
+                            />
+                            <span>Gestión de inventario</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <Icon
+                                name="mdi:check-circle"
+                                class="size-5 text-primary"
+                            />
+                            <span>SEO optimizado</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div
+                    class="border-primary/30 rounded-lg border-2 bg-offset p-8"
+                >
+                    <div class="mb-6 flex items-start justify-between">
+                        <div>
+                            <h3 class="mb-2 font-bold text-3xl">
+                                Frontline Analytics
+                            </h3>
+                            <p class="text-primary text-xl">
+                                Business Intelligence
+                            </p>
+                        </div>
+                        <Icon
+                            name="mdi:chart-line"
+                            class="size-16 text-primary"
+                        />
+                    </div>
+                    <p class="mb-4 text-offset text-lg">
+                        Transforma tus datos en decisiones inteligentes con
+                        nuestro sistema de análisis y visualización de datos
+                        empresariales.
+                    </p>
+                    <ul class="grid gap-3 md:grid-cols-2">
+                        <li class="flex items-center gap-2">
+                            <Icon
+                                name="mdi:check-circle"
+                                class="size-5 text-primary"
+                            />
+                            <span>Dashboards personalizables</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <Icon
+                                name="mdi:check-circle"
+                                class="size-5 text-primary"
+                            />
+                            <span>Análisis predictivo</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <Icon
+                                name="mdi:check-circle"
+                                class="size-5 text-primary"
+                            />
+                            <span>Reportes automatizados</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <Icon
+                                name="mdi:check-circle"
+                                class="size-5 text-primary"
+                            />
+                            <span>Integración de datos</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="mt-12 text-center">
+                <a
+                    href="/contacto"
+                    class="hover:bg-primary/90 inline-flex items-center gap-3 rounded-lg bg-primary px-8 py-4 font-bold text-white transition-all hover:shadow-lg"
+                >
+                    <Icon name="mdi:information" class="size-6" />
+                    <span>Más Información</span>
+                </a>
+            </div>
+        </ContentSection>
+    </div>
+</BaseLayout>
