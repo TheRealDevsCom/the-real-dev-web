@@ -1,15 +1,15 @@
 ---
-import { Icon } from "astro-icon/components";
-import ContentSection from "~/components/content-section.astro";
+import { Icon } from 'astro-icon/components'
+import ContentSection from '~/components/content-section.astro'
 ---
 
-<ContentSection title="Just ship less" id="intro">
-  <Icon slot="eyebrow" name="logomark" class="size-32" />
+<ContentSection title="Somos The Real Devs" id="intro">
+  <Icon slot="eyebrow" name="logomark" class="size-72" />
   <Fragment slot="lead">
-    Astro is a new kind of site builder for the
-    <span class="text-primary">modern</span> web.
-    <span class="text-primary">Lightning-fast</span>
-    performance meets <span class="text-primary">powerful</span> developer experience.
+    Una agencia de desarrollo especializada en sistemas
+    <span class="text-primary">empresariales,</span>Pyme,
+    <span class="text-primary">Salesforce</span>
+    integraciones <span class="text-primary">y plataformas web de alto rendimiento.</span>
   </Fragment>
   <div class="grid grid-cols-1 gap-2 sm:grid-cols-2">
     <a
@@ -17,14 +17,14 @@ import ContentSection from "~/components/content-section.astro";
       class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
     >
       <Icon name="mdi:telescope" class="size-8" />
-      <span>Read the docs</span>
+      <span>Cotizar Proyecto</span>
     </a>
     <a
       href="https://astro.new/"
       class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
     >
       <Icon name="mdi:rocket" class="size-8" />
-      <span>Try it out</span>
+      <span>Agenda una reunión</span>
     </a>
   </div>
 </ContentSection>

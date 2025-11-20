@@ -4,20 +4,29 @@ import ThemeSwitcher from "~/components/theme-switcher.astro";
 import type { NavItem } from "~/types";
 
 const navItems: Array<NavItem> = [
-  { title: "Features", url: "#features" },
-  { title: "Compatibility", url: "#compatibility" },
-  { title: "Showcase", url: "#showcase" },
+  { title: "Inicio", url: "#" },
+  { title: "Servicios", url: "#features" },
+  { title: "Productos Frontline", url: "#compatibility" },
+  { title: "Portafolio", url: "#showcase" },
+  { title: "Nosotros", url: "#contact" },
+  { title: "Blog", url: "#blog" },
+  { title: "Contacto", url: "#contact" },
 ];
 ---
 
 <header
   id="page-header"
-  class="absolute bottom-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-white"
+  class="absolute bottom-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 font-black text-[#00A3AD]"
 >
   <a class="flex items-center gap-3 hover:!text-default" href="#">
-    <h1 class="sr-only">Astro</h1>
-    <Icon name="logomark" class="size-10" />
-    <Icon name="wordmark" class="hidden h-4 sm:block" />
+    <h1 class="sr-only">TheRealDevs</h1>
+
+    <Icon
+      name="logomark"
+      id="logo-main"
+      class="size-20 transition-all duration-500"
+    />
+    <!-- <Icon name="wordmark" class="hidden h-4 sm:block" /> -->
   </a>
   <div>
     <div class="flex items-center gap-6">
@@ -124,6 +133,18 @@ const navItems: Array<NavItem> = [
     #open-nav-button {
       display: none;
     }
+
+    .neon-text {
+      text-shadow:
+        0 0 5px #0ff,
+        0 0 10px #0ff,
+        0 0 20px #0ff,
+        0 0 40px #0ff,
+        0 0 80px #0ff;
+      background-color: #000;
+      padding: 20px;
+      text-align: center;
+    }
   </style>
 </noscript>
 
@@ -134,5 +155,13 @@ const navItems: Array<NavItem> = [
   }
   .modal.is-open {
     @apply block;
+  }
+
+  #logo-main {
+    @apply scale-0 opacity-0 transition-all duration-500;
+  }
+
+  :global(.fixed-header) #logo-main {
+    @apply scale-100 opacity-100;
   }
 </style>
