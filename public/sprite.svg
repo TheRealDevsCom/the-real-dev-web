@@ -98,4 +98,15 @@
     <path d="M39.0996 148.4H37.0996V150.4V169V171H39.0996H57.7002H59.7002V169V150.4V148.4H57.7002H39.0996Z" fill="currentColor"/>
     <path d="M2 148.4H0V150.4V169V171H2H20.5996H22.5996V169V150.4V148.4H20.5996H2Z" fill="currentColor"/>
   </symbol>
+  <!-- mdi:menu -->
+  <symbol id="mdi:menu" viewBox="0 0 24 24"><path fill="currentColor" d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></symbol>
+
+  <!-- mdi:close -->
+  <symbol id="mdi:close" viewBox="0 0 24 24"><path fill="currentColor" d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12z"/></symbol>
+
+  <!-- mdi:rocket -->
+  <symbol id="mdi:rocket" viewBox="0 0 24 24"><path fill="currentColor" d="m20 22l-3.86-1.55c.7-1.53 1.2-3.11 1.51-4.72zM7.86 20.45L4 22l2.35-6.27c.31 1.61.81 3.19 1.51 4.72M12 2s5 2 5 10c0 3.1-.75 5.75-1.67 7.83A2 2 0 0 1 13.5 21h-3a2 2 0 0 1-1.83-1.17C7.76 17.75 7 15.1 7 12c0-8 5-10 5-10m0 10c1.1 0 2-.9 2-2s-.9-2-2-2s-2 .9-2 2s.9 2 2 2"/></symbol>
+
+  <!-- mdi:telescope -->
+  <symbol id="mdi:telescope" viewBox="0 0 24 24"><path fill="currentColor" d="m21.9 8.9l-1.7 1l-4-6.9l1.7-1zm-12.1-1l3 5.2l6.1-3.5l-3-5.2zm1.6 4.8l-2-3.5l-4.3 2.5l2 3.5zm-9.3 1.9l1 1.7l2.6-1.5l-1-1.7zm10-.6l-.3-.4l-4.3 2.5l.3.4c.2.3.5.6.8.8L7 22h2l1.4-4.3h.1L12 22h2l-1.9-5.6c.5-.7.5-1.6 0-2.4"/></symbol>
 </svg>

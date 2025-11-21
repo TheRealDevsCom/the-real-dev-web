@@ -18,11 +18,11 @@ const isHomePage = currentPath === "/";
 ---
 
 <header
+  id="page-header"
+  data-is-home={String(isHomePage)}
   class:list={[
-    "z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 font-black text-[#18a0ba]",
-    isHomePage
-      ? "absolute bottom-0"
-      : "fixed top-0 border-default bg-default text-default",
+    "text-border z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 font-black text-[#18a0ba]",
+    isHomePage ? "absolute bottom-0" : "fixed-header",
   ]}
 >
   <a class="flex items-center gap-3 hover:!text-default" href="#">
@@ -58,7 +58,9 @@ const isHomePage = currentPath === "/";
       >
         <SpriteIcon name="mdi:menu" class="size-8" />
       </button>
-      <ThemeSwitcher />
+      <div id="theme-switcher-wrapper">
+        <ThemeSwitcher />
+      </div>
     </div>
     <div id="menu-modal" class="modal hidden" aria-hidden="true">
       <div class="fixed inset-0 bg-default px-8 py-4 text-default">
@@ -122,11 +124,12 @@ const isHomePage = currentPath === "/";
 
   openNavButton.addEventListener("click", openMenu);
   closeNavButton.addEventListener("click", closeMenu);
-
-  document.addEventListener("scroll", () => {
-    const d = page.clientHeight - page.scrollTop - header.offsetHeight;
-    header.classList.toggle("fixed-header", d < 0);
-  });
+  if (header.dataset.isHome === "true") {
+    document.addEventListener("scroll", () => {
+      const d = page.clientHeight - page.scrollTop - header.offsetHeight;
+      header.classList.toggle("fixed-header", d < 0);
+    });
+  }
 
   menu.addEventListener("click", (event) => {
     if ((event.target as HTMLElement).tagName === "A") {
@@ -152,15 +155,10 @@ const isHomePage = currentPath === "/";
     @apply block;
   }
 
-  #logo-main {
-    @apply scale-0 opacity-0 transition-all duration-500;
+  #page-header :global(#logo-main) {
+    @apply -translate-y-4 opacity-0;
   }
-
-  :global(.fixed-header) #logo-main {
-    @apply scale-100 opacity-100;
-  }
-
-  .fixed-header nav a {
-    text-shadow: none;
+  #page-header.fixed-header :global(#logo-main) {
+    @apply translate-y-0 opacity-100;
   }
 </style>
