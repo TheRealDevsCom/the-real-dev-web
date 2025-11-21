@@ -4,7 +4,7 @@ import ContentSection from "~/components/content-section.astro";
 ---
 
 <ContentSection title="Somos The Real Devs" id="intro">
-  <SpriteIcon slot="eyebrow" name="logomark" class="size-72" />
+  <SpriteIcon slot="eyebrow" name="logomark" class="size-72" id="logo-intro" />
   <Fragment slot="lead">
     Una agencia de desarrollo especializada en sistemas
     <span class="text-primary">empresariales,</span>Pyme,
@@ -31,3 +31,39 @@ import ContentSection from "~/components/content-section.astro";
   </div>
 </ContentSection>
 
+<script>
+  // Function to update intro logo based on theme
+  const updateIntroLogo = () => {
+    const logo = document.querySelector("#logo-intro use") as SVGUseElement;
+    if (!logo) return;
+
+    const currentTheme = document.documentElement.dataset.theme;
+    const isLightTheme = currentTheme === "light";
+
+    if (isLightTheme) {
+      logo.setAttribute("href", "/sprite.svg#logomarkLight");
+    } else {
+      logo.setAttribute("href", "/sprite.svg#logomark");
+    }
+  };
+
+  // Listen for theme changes
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (
+        mutation.type === "attributes" &&
+        mutation.attributeName === "data-theme"
+      ) {
+        updateIntroLogo();
+      }
+    });
+  });
+
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["data-theme"],
+  });
+
+  // Initial logo update
+  updateIntroLogo();
+</script>

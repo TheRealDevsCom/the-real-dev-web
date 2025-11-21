@@ -122,14 +122,53 @@ const isHomePage = currentPath === "/";
     MicroModal.close(menuModalId);
   };
 
+  // Function to update logo based on theme
+  const updateLogo = () => {
+    const logo = document.querySelector("#logo-main use") as SVGUseElement;
+    if (!logo) return;
+
+    const currentTheme = document.documentElement.dataset.theme;
+    const isLightTheme = currentTheme === "light";
+    const isHeaderFixed = header.classList.contains("fixed-header");
+
+    // Only change logo when header is fixed
+    if (isHeaderFixed && isLightTheme) {
+      logo.setAttribute("href", "/sprite.svg#logomarkLight");
+    } else {
+      logo.setAttribute("href", "/sprite.svg#logomark");
+    }
+  };
+
   openNavButton.addEventListener("click", openMenu);
   closeNavButton.addEventListener("click", closeMenu);
+
   if (header.dataset.isHome === "true") {
     document.addEventListener("scroll", () => {
       const d = page.clientHeight - page.scrollTop - header.offsetHeight;
       header.classList.toggle("fixed-header", d < 0);
+      updateLogo(); // Update logo when header becomes fixed/unfixed
     });
   }
+
+  // Listen for theme changes
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (
+        mutation.type === "attributes" &&
+        mutation.attributeName === "data-theme"
+      ) {
+        updateLogo();
+      }
+    });
+  });
+
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["data-theme"],
+  });
+
+  // Initial logo update
+  updateLogo();
 
   menu.addEventListener("click", (event) => {
     if ((event.target as HTMLElement).tagName === "A") {

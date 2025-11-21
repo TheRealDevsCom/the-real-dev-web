@@ -246,16 +246,14 @@
     </div>
 </section>
 
-<script>
+<script is:inline>
     // Form type switching
     function initContactForm() {
         const btnCotizar = document.getElementById("btn-cotizar");
         const btnAgendar = document.getElementById("btn-agendar");
         const cotizarFields = document.getElementById("cotizar-fields");
         const agendarFields = document.getElementById("agendar-fields");
-        const formTypeInput = document.getElementById(
-            "form-type",
-        ) as HTMLInputElement;
+        const formTypeInput = document.getElementById("form-type");
         const submitText = document.getElementById("submit-text");
 
         function switchToQuote() {
@@ -326,7 +324,7 @@
         }
 
         // Form submission
-        const form = document.getElementById("contact-form") as HTMLFormElement;
+        const form = document.getElementById("contact-form");
         const successMessage = document.getElementById("success-message");
 
         form?.addEventListener("submit", async (e) => {
