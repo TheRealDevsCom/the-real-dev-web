@@ -7,12 +7,14 @@
         <!-- Form Type Selector -->
         <div class="mb-8 flex gap-4">
             <button
+                type="button"
                 id="btn-cotizar"
                 class="form-type-btn active hover:bg-primary/90 flex-1 rounded-lg border-2 border-primary bg-primary px-6 py-3 font-bold text-white transition-all"
             >
                 Cotizar Proyecto
             </button>
             <button
+                type="button"
                 id="btn-agendar"
                 class="form-type-btn hover:bg-primary/10 flex-1 rounded-lg border-2 border-primary bg-transparent px-6 py-3 font-bold text-primary transition-all"
             >
@@ -246,92 +248,116 @@
 
 <script>
     // Form type switching
-    const btnCotizar = document.getElementById("btn-cotizar");
-    const btnAgendar = document.getElementById("btn-agendar");
-    const cotizarFields = document.getElementById("cotizar-fields");
-    const agendarFields = document.getElementById("agendar-fields");
-    const formTypeInput = document.getElementById(
-        "form-type",
-    ) as HTMLInputElement;
-    const submitText = document.getElementById("submit-text");
+    function initContactForm() {
+        const btnCotizar = document.getElementById("btn-cotizar");
+        const btnAgendar = document.getElementById("btn-agendar");
+        const cotizarFields = document.getElementById("cotizar-fields");
+        const agendarFields = document.getElementById("agendar-fields");
+        const formTypeInput = document.getElementById(
+            "form-type",
+        ) as HTMLInputElement;
+        const submitText = document.getElementById("submit-text");
 
-    function switchToQuote() {
-        btnCotizar?.classList.add("active", "bg-primary", "text-white");
-        btnCotizar?.classList.remove("bg-transparent", "text-primary");
-        btnAgendar?.classList.remove("active", "bg-primary", "text-white");
-        btnAgendar?.classList.add("bg-transparent", "text-primary");
-        cotizarFields?.classList.remove("hidden");
-        agendarFields?.classList.add("hidden");
-        if (formTypeInput) formTypeInput.value = "cotizar";
-        if (submitText) submitText.textContent = "Enviar Cotización";
+        function switchToQuote() {
+            btnCotizar?.classList.add("active", "bg-primary", "text-white");
+            btnCotizar?.classList.remove("bg-transparent", "text-primary");
+            btnAgendar?.classList.remove("active", "bg-primary", "text-white");
+            btnAgendar?.classList.add("bg-transparent", "text-primary");
+            cotizarFields?.classList.remove("hidden");
+            agendarFields?.classList.add("hidden");
+            if (formTypeInput) formTypeInput.value = "cotizar";
+            if (submitText) submitText.textContent = "Enviar Cotización";
 
-        // Update required fields
-        document
-            .getElementById("project-type")
-            ?.setAttribute("required", "required");
-        document.getElementById("preferred-date")?.removeAttribute("required");
-        document.getElementById("preferred-time")?.removeAttribute("required");
-        document.getElementById("meeting-type")?.removeAttribute("required");
+            // Update required fields
+            document
+                .getElementById("project-type")
+                ?.setAttribute("required", "required");
+            document
+                .getElementById("preferred-date")
+                ?.removeAttribute("required");
+            document
+                .getElementById("preferred-time")
+                ?.removeAttribute("required");
+            document
+                .getElementById("meeting-type")
+                ?.removeAttribute("required");
+        }
+
+        function switchToSchedule() {
+            btnAgendar?.classList.add("active", "bg-primary", "text-white");
+            btnAgendar?.classList.remove("bg-transparent", "text-primary");
+            btnCotizar?.classList.remove("active", "bg-primary", "text-white");
+            btnCotizar?.classList.add("bg-transparent", "text-primary");
+            agendarFields?.classList.remove("hidden");
+            cotizarFields?.classList.add("hidden");
+            if (formTypeInput) formTypeInput.value = "agendar";
+            if (submitText) submitText.textContent = "Agendar Reunión";
+
+            // Update required fields
+            document
+                .getElementById("project-type")
+                ?.removeAttribute("required");
+            document
+                .getElementById("preferred-date")
+                ?.setAttribute("required", "required");
+            document
+                .getElementById("preferred-time")
+                ?.setAttribute("required", "required");
+            document
+                .getElementById("meeting-type")
+                ?.setAttribute("required", "required");
+        }
+
+        btnCotizar?.addEventListener("click", (e) => {
+            e.preventDefault();
+            switchToQuote();
+        });
+
+        btnAgendar?.addEventListener("click", (e) => {
+            e.preventDefault();
+            switchToSchedule();
+        });
+
+        // Check URL hash on load
+        if (window.location.hash === "#agendar") {
+            switchToSchedule();
+        } else if (window.location.hash === "#cotizar") {
+            switchToQuote();
+        }
+
+        // Form submission
+        const form = document.getElementById("contact-form") as HTMLFormElement;
+        const successMessage = document.getElementById("success-message");
+
+        form?.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            // Here you would normally send to a backend API
+            console.log("Form data:", data);
+
+            // Show success message
+            form.classList.add("hidden");
+            successMessage?.classList.remove("hidden");
+
+            // Reset form after 3 seconds
+            setTimeout(() => {
+                form.reset();
+                form.classList.remove("hidden");
+                successMessage?.classList.add("hidden");
+                switchToQuote(); // Reset to default
+            }, 3000);
+        });
     }
 
-    function switchToSchedule() {
-        btnAgendar?.classList.add("active", "bg-primary", "text-white");
-        btnAgendar?.classList.remove("bg-transparent", "text-primary");
-        btnCotizar?.classList.remove("active", "bg-primary", "text-white");
-        btnCotizar?.classList.add("bg-transparent", "text-primary");
-        agendarFields?.classList.remove("hidden");
-        cotizarFields?.classList.add("hidden");
-        if (formTypeInput) formTypeInput.value = "agendar";
-        if (submitText) submitText.textContent = "Agendar Reunión";
-
-        // Update required fields
-        document.getElementById("project-type")?.removeAttribute("required");
-        document
-            .getElementById("preferred-date")
-            ?.setAttribute("required", "required");
-        document
-            .getElementById("preferred-time")
-            ?.setAttribute("required", "required");
-        document
-            .getElementById("meeting-type")
-            ?.setAttribute("required", "required");
+    // Run initialization when DOM is ready
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initContactForm);
+    } else {
+        initContactForm();
     }
-
-    btnCotizar?.addEventListener("click", switchToQuote);
-    btnAgendar?.addEventListener("click", switchToSchedule);
-
-    // Check URL hash on load
-    if (window.location.hash === "#agendar") {
-        switchToSchedule();
-    } else if (window.location.hash === "#cotizar") {
-        switchToQuote();
-    }
-
-    // Form submission
-    const form = document.getElementById("contact-form") as HTMLFormElement;
-    const successMessage = document.getElementById("success-message");
-
-    form?.addEventListener("submit", async (e) => {
-        e.preventDefault();
-
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData.entries());
-
-        // Here you would normally send to a backend API
-        console.log("Form data:", data);
-
-        // Show success message
-        form.classList.add("hidden");
-        successMessage?.classList.remove("hidden");
-
-        // Reset form after 3 seconds
-        setTimeout(() => {
-            form.reset();
-            form.classList.remove("hidden");
-            successMessage?.classList.add("hidden");
-            switchToQuote(); // Reset to default
-        }, 3000);
-    });
 </script>
 
 <style>
