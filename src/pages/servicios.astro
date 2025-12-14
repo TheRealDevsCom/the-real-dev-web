@@ -19,64 +19,215 @@ import { Icon } from "astro-icon/components";
                 > de todos los tamaños.
             </Fragment>
 
-            <Features />
-
-            <!-- Additional Services Details -->
-            <div class="mt-16 grid gap-8 md:grid-cols-2">
-                <div class="rounded-lg border border-default bg-offset p-8">
-                    <div class="mb-4 flex items-center gap-4">
-                        <Icon name="mdi:web" class="size-12 text-primary" />
-                        <h3 class="font-bold text-2xl">Desarrollo Web</h3>
+            <div class="grid gap-12 md:grid-cols-2">
+                <!-- Service 1 -->
+                <div
+                    class="flex flex-col gap-4 rounded-xl border border-default bg-offset p-8 shadow-sm"
+                >
+                    <div
+                        class="bg-primary/20 flex size-16 items-center justify-center rounded-full text-primary"
+                    >
+                        <Icon name="mdi:monitor-dashboard" class="size-8" />
                     </div>
-                    <p class="text-offset">
-                        Creamos aplicaciones web modernas, rápidas y escalables
-                        utilizando las últimas tecnologías. Desde landing pages
-                        hasta sistemas empresariales complejos.
-                    </p>
+                    <div>
+                        <h3 class="font-bold text-2xl">
+                            Desarrollo de Software a Medida
+                        </h3>
+                        <p class="mt-4 text-offset">
+                            Diseñamos y construimos sistemas robustos adaptados
+                            específicamente a las necesidades de tu empresa. No
+                            creemos en soluciones genéricas; analizamos tu flujo
+                            de trabajo para crear herramientas que optimicen tus
+                            operaciones reales.
+                        </p>
+                        <ul class="mt-6 space-y-2 text-offset text-sm">
+                            <li class="flex items-center gap-2">
+                                <Icon name="mdi:check" class="text-primary" /> Aplicaciones
+                                Web Progresivas (PWA)
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <Icon name="mdi:check" class="text-primary" /> Sistemas
+                                Desktop (.NET)
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <Icon name="mdi:check" class="text-primary" /> Arquitecturas
+                                escalables (Microservicios)
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="rounded-lg border border-default bg-offset p-8">
-                    <div class="mb-4 flex items-center gap-4">
-                        <Icon
-                            name="mdi:cellphone"
-                            class="size-12 text-primary"
-                        />
+                <!-- Service 2 -->
+                <div
+                    class="flex flex-col gap-4 rounded-xl border border-default bg-offset p-8 shadow-sm"
+                >
+                    <div
+                        class="bg-primary/20 flex size-16 items-center justify-center rounded-full text-primary"
+                    >
+                        <Icon name="mdi:cloud-check" class="size-8" />
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-2xl">
+                            Soluciones Salesforce
+                        </h3>
+                        <p class="mt-4 text-offset">
+                            Maximiza tu inversión en la plataforma CRM #1 del
+                            mundo. Nuestro equipo certificado desarrolla
+                            personalizaciones avanzadas que van más allá de la
+                            configuración estándar.
+                        </p>
+                        <ul class="mt-6 space-y-2 text-offset text-sm">
+                            <li class="flex items-center gap-2">
+                                <Icon name="mdi:check" class="text-primary" /> Desarrollo
+                                Apex & LWC
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <Icon name="mdi:check" class="text-primary" /> Automatización
+                                de Flujos Complejos
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <Icon name="mdi:check" class="text-primary" /> Integraciones
+                                API con ERPs
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div
+                    class="flex flex-col gap-4 rounded-xl border border-default bg-offset p-8 shadow-sm"
+                >
+                    <div
+                        class="bg-primary/20 flex size-16 items-center justify-center rounded-full text-primary"
+                    >
+                        <Icon name="mdi:cellphone" class="size-8" />
+                    </div>
+                    <div>
                         <h3 class="font-bold text-2xl">Aplicaciones Móviles</h3>
+                        <p class="mt-4 text-offset">
+                            Lleva tu negocio al bolsillo de tus clientes con
+                            aplicaciones nativas y multiplataforma de alto
+                            rendimiento. Experiencias fluidas y modernas.
+                        </p>
+                        <ul class="mt-6 space-y-2 text-offset text-sm">
+                            <li class="flex items-center gap-2">
+                                <Icon name="mdi:check" class="text-primary" /> Desarrollo
+                                en Flutter (iOS/Android)
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <Icon name="mdi:check" class="text-primary" /> Integración
+                                con hardware móvil
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <Icon name="mdi:check" class="text-primary" /> Notificaciones
+                                Push inteligentes
+                            </li>
+                        </ul>
                     </div>
-                    <p class="text-offset">
-                        Desarrollamos apps nativas y multiplataforma para iOS y
-                        Android que ofrecen experiencias de usuario
-                        excepcionales.
-                    </p>
                 </div>
 
-                <div class="rounded-lg border border-default bg-offset p-8">
-                    <div class="mb-4 flex items-center gap-4">
-                        <Icon name="mdi:cloud" class="size-12 text-primary" />
-                        <h3 class="font-bold text-2xl">
-                            Integración Salesforce
-                        </h3>
+                <!-- Service 4 -->
+                <div
+                    class="flex flex-col gap-4 rounded-xl border border-default bg-offset p-8 shadow-sm"
+                >
+                    <div
+                        class="bg-primary/20 flex size-16 items-center justify-center rounded-full text-primary"
+                    >
+                        <Icon name="mdi:server-network" class="size-8" />
                     </div>
-                    <p class="text-offset">
-                        Especialistas en implementación, personalización e
-                        integración de Salesforce con tus sistemas existentes.
-                    </p>
+                    <div>
+                        <h3 class="font-bold text-2xl">
+                            Infraestructura & Cloud
+                        </h3>
+                        <p class="mt-4 text-offset">
+                            No solo desarrollamos, también garantizamos que tu
+                            software corra en entornos seguros, rápidos y
+                            disponibles 24/7.
+                        </p>
+                        <ul class="mt-6 space-y-2 text-offset text-sm">
+                            <li class="flex items-center gap-2">
+                                <Icon name="mdi:check" class="text-primary" /> Administración
+                                Servidores Linux
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <Icon name="mdi:check" class="text-primary" /> Redes
+                                Privadas (VPN) & Seguridad
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <Icon name="mdi:check" class="text-primary" /> CI/CD
+                                & DevOps
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="rounded-lg border border-default bg-offset p-8">
-                    <div class="mb-4 flex items-center gap-4">
-                        <Icon
-                            name="mdi:database"
-                            class="size-12 text-primary"
-                        />
-                        <h3 class="font-bold text-2xl">
-                            Sistemas Empresariales
-                        </h3>
+                <!-- Service 5 -->
+                <div
+                    class="flex flex-col gap-4 rounded-xl border border-default bg-offset p-8 shadow-sm"
+                >
+                    <div
+                        class="bg-primary/20 flex size-16 items-center justify-center rounded-full text-primary"
+                    >
+                        <Icon name="mdi:lightbulb-on" class="size-8" />
                     </div>
-                    <p class="text-offset">
-                        Soluciones ERP, CRM y sistemas a medida para optimizar
-                        los procesos de tu empresa y aumentar la productividad.
-                    </p>
+                    <div>
+                        <h3 class="font-bold text-2xl">Consultoría IT</h3>
+                        <p class="mt-4 text-offset">
+                            Acompañamos tu transformación digital con estrategia
+                            y experiencia técnica. Evaluamos tus sistemas
+                            actuales y diseñamos el camino hacia la
+                            modernización.
+                        </p>
+                        <ul class="mt-6 space-y-2 text-offset text-sm">
+                            <li class="flex items-center gap-2">
+                                <Icon name="mdi:check" class="text-primary" /> Auditoría
+                                de Sistemas Legacy
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <Icon name="mdi:check" class="text-primary" /> Diseño
+                                de Arquitectura de Software
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <Icon name="mdi:check" class="text-primary" /> Capacitación
+                                de equipos técnicos
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div
+                    class="flex flex-col gap-4 rounded-xl border border-default bg-offset p-8 shadow-sm"
+                >
+                    <div
+                        class="bg-primary/20 flex size-16 items-center justify-center rounded-full text-primary"
+                    >
+                        <Icon name="mdi:rocket-launch" class="size-8" />
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-2xl">
+                            Productos SaaS Propios
+                        </h3>
+                        <p class="mt-4 text-offset">
+                            Innovamos desarrollando nuestras propias plataformas
+                            para resolver problemas comunes del mercado
+                            regional.
+                        </p>
+                        <ul class="mt-6 space-y-2 text-offset text-sm">
+                            <li class="flex items-center gap-2">
+                                <Icon name="mdi:check" class="text-primary" /> Frontline
+                                ERP ( Financiero)
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <Icon name="mdi:check" class="text-primary" /> SmartFlow
+                                (Automatización)
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <Icon name="mdi:check" class="text-primary" /> RealCloud
+                                CRM
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 

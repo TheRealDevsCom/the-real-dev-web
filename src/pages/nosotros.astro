@@ -11,7 +11,12 @@ import SpriteIcon from "~/components/sprite-icon.astro";
 >
     <div class="space-y-24 px-8 py-32">
         <ContentSection title="Sobre Nosotros" id="nosotros">
-            <SpriteIcon slot="eyebrow" name="logomark" class="size-32" />
+            <SpriteIcon
+                slot="eyebrow"
+                name="logomark"
+                class="size-72"
+                id="logo-intro"
+            />
             <Fragment slot="lead">
                 Somos un equipo de <span class="text-primary"
                     >desarrolladores apasionados</span
@@ -156,6 +161,205 @@ import SpriteIcon from "~/components/sprite-icon.astro";
                 </div>
             </div>
 
+            <!-- Nuestro Equipo -->
+            <div class="mt-24">
+                <h3 class="mb-12 text-center font-bold text-3xl">
+                    Nuestro Equipo
+                </h3>
+                <div class="grid gap-8 md:grid-cols-2">
+                    <!-- Daniel Profile -->
+                    <div
+                        class="flex flex-col rounded-xl border border-default bg-offset p-8 shadow-lg transition-transform hover:scale-[1.02]"
+                    >
+                        <div class="mb-6 flex items-center gap-4">
+                            <div
+                                class="bg-primary/20 flex size-16 items-center justify-center rounded-full font-bold text-primary text-3xl"
+                            >
+                                DF
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-2xl">
+                                    Daniel Enrique Flores García
+                                </h4>
+                                <span class="font-semibold text-primary"
+                                    >Ingeniero en Sistemas & Senior Salesforce
+                                    Specialist</span
+                                >
+                            </div>
+                        </div>
+
+                        <p class="mb-6 text-offset">
+                            Ingeniero con más de 10 años de experiencia,
+                            combinando una sólida base técnica con visión
+                            funcional de negocio. Especialista en Salesforce
+                            (Apex, LWC), .NET y administración de
+                            infraestructura empresarial.
+                        </p>
+
+                        <div class="mt-auto space-y-4">
+                            <div>
+                                <h5
+                                    class="mb-2 font-semibold uppercase tracking-wider text-default text-sm"
+                                >
+                                    Fortalezas Clave
+                                </h5>
+                                <ul class="space-y-2 text-offset text-sm">
+                                    <li class="flex items-start gap-2">
+                                        <Icon
+                                            name="mdi:check-circle"
+                                            class="mt-1 size-4 flex-shrink-0 text-primary"
+                                        />
+                                        <span
+                                            >Arquitectura y Automatización de
+                                            procesos.</span
+                                        >
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <Icon
+                                            name="mdi:check-circle"
+                                            class="mt-1 size-4 flex-shrink-0 text-primary"
+                                        />
+                                        <span
+                                            >Integración avanzada Salesforce
+                                            (Comercial, Contable).</span
+                                        >
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <Icon
+                                            name="mdi:check-circle"
+                                            class="mt-1 size-4 flex-shrink-0 text-primary"
+                                        />
+                                        <span
+                                            >Infraestructura Linux y Seguridad.</span
+                                        >
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="pt-4">
+                                <h5
+                                    class="mb-2 font-semibold uppercase tracking-wider text-default text-sm"
+                                >
+                                    Tecnologías
+                                </h5>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="rounded-full bg-default px-3 py-1 text-xs"
+                                        >Salesforce/Apex</span
+                                    >
+                                    <span
+                                        class="rounded-full bg-default px-3 py-1 text-xs"
+                                        >.NET (C#)</span
+                                    >
+                                    <span
+                                        class="rounded-full bg-default px-3 py-1 text-xs"
+                                        >SQL Server</span
+                                    >
+                                    <span
+                                        class="rounded-full bg-default px-3 py-1 text-xs"
+                                        >Linux</span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Jorge Profile -->
+                    <div
+                        class="flex flex-col rounded-xl border border-default bg-offset p-8 shadow-lg transition-transform hover:scale-[1.02]"
+                    >
+                        <div class="mb-6 flex items-center gap-4">
+                            <div
+                                class="bg-primary/20 flex size-16 items-center justify-center rounded-full font-bold text-primary text-3xl"
+                            >
+                                JR
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-2xl">
+                                    Jorge Isaac Rodríguez Vargas
+                                </h4>
+                                <span class="font-semibold text-primary"
+                                    >Full Stack & Mobile Developer</span
+                                >
+                            </div>
+                        </div>
+
+                        <p class="mb-6 text-offset">
+                            Ingeniero especializado en desarrollo full stack y
+                            multiplataforma con experiencia internacional.
+                            Experto en conectar soluciones backend robustas con
+                            interfaces modernas y optimizadas.
+                        </p>
+
+                        <div class="mt-auto space-y-4">
+                            <div>
+                                <h5
+                                    class="mb-2 font-semibold uppercase tracking-wider text-default text-sm"
+                                >
+                                    Fortalezas Clave
+                                </h5>
+                                <ul class="space-y-2 text-offset text-sm">
+                                    <li class="flex items-start gap-2">
+                                        <Icon
+                                            name="mdi:check-circle"
+                                            class="mt-1 size-4 flex-shrink-0 text-primary"
+                                        />
+                                        <span
+                                            >Desarrollo Multiplataforma
+                                            (Flutter, Web).</span
+                                        >
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <Icon
+                                            name="mdi:check-circle"
+                                            class="mt-1 size-4 flex-shrink-0 text-primary"
+                                        />
+                                        <span
+                                            >Salesforce Development (LWC, Apex).</span
+                                        >
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <Icon
+                                            name="mdi:check-circle"
+                                            class="mt-1 size-4 flex-shrink-0 text-primary"
+                                        />
+                                        <span
+                                            >Diseño de Arquitecturas Escalables.</span
+                                        >
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="pt-4">
+                                <h5
+                                    class="mb-2 font-semibold uppercase tracking-wider text-default text-sm"
+                                >
+                                    Tecnologías
+                                </h5>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="rounded-full bg-default px-3 py-1 text-xs"
+                                        >Flutter</span
+                                    >
+                                    <span
+                                        class="rounded-full bg-default px-3 py-1 text-xs"
+                                        >Angular/Vue</span
+                                    >
+                                    <span
+                                        class="rounded-full bg-default px-3 py-1 text-xs"
+                                        >Laravel/PHP</span
+                                    >
+                                    <span
+                                        class="rounded-full bg-default px-3 py-1 text-xs"
+                                        >Node.js</span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Stats -->
             <div class="mt-16 grid gap-8 md:grid-cols-4">
                 <div class="text-center">
@@ -189,3 +393,40 @@ import SpriteIcon from "~/components/sprite-icon.astro";
         </ContentSection>
     </div>
 </BaseLayout>
+
+<script>
+    // Function to update intro logo based on theme
+    const updateIntroLogo = () => {
+        const logo = document.querySelector("#logo-intro use") as SVGUseElement;
+        if (!logo) return;
+
+        const currentTheme = document.documentElement.dataset.theme;
+        const isLightTheme = currentTheme === "light";
+
+        if (isLightTheme) {
+            logo.setAttribute("href", "/sprite.svg#logomarkLight");
+        } else {
+            logo.setAttribute("href", "/sprite.svg#logomark");
+        }
+    };
+
+    // Listen for theme changes
+    const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            if (
+                mutation.type === "attributes" &&
+                mutation.attributeName === "data-theme"
+            ) {
+                updateIntroLogo();
+            }
+        });
+    });
+
+    observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ["data-theme"],
+    });
+
+    // Initial logo update
+    updateIntroLogo();
+</script>
