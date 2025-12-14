@@ -3,18 +3,18 @@ import SpriteIcon from "~/components/sprite-icon.astro";
 import ThemeSwitcher from "~/components/theme-switcher.astro";
 import type { NavItem } from "~/types";
 
+const currentPath = Astro.url.pathname;
+const isHomePage = currentPath === "/";
+
 const navItems: Array<NavItem> = [
   { title: "Inicio", url: "/" },
-  { title: "Servicios", url: "#features" },
-  { title: "Productos Frontline", url: "#compatibility" },
-  { title: "Portafolio", url: "#showcase" },
+  { title: "Servicios", url: isHomePage ? "#services" : "/servicios" },
+  { title: "Productos Frontline", url: "/#compatibility" },
+  { title: "Portafolio", url: "/#showcase" },
   { title: "Nosotros", url: "/nosotros" },
   { title: "Blog", url: "/blog" },
   { title: "Contacto", url: "/contacto" },
 ];
-
-const currentPath = Astro.url.pathname;
-const isHomePage = currentPath === "/";
 ---
 
 <header
@@ -25,13 +25,12 @@ const isHomePage = currentPath === "/";
     isHomePage ? "absolute bottom-0" : "fixed-header",
   ]}
 >
-  <a class="flex items-center gap-3 hover:!text-default" href="#">
+  <a class="flex items-center gap-3 hover:!text-default" href="/">
     <h1 class="sr-only">TheRealDevs</h1>
-
     <SpriteIcon
       name="logomark"
       id="logo-main"
-      class="size-20 transition-all duration-500"
+      class="size-24 transition-all duration-500"
     />
     <!-- <SpriteIcon name="wordmark" class="hidden h-4 sm:block" /> -->
   </a>

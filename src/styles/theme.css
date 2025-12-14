@@ -1,5 +1,5 @@
 [data-theme="light"] {
-  --color-primary: theme("colors.blue.600");
+  --color-primary: #18A0BA;
   --color-secondary: theme("colors.slate.700");
   --color-text: theme("colors.gray.900");
   --color-text-offset: theme("colors.gray.600");
@@ -9,7 +9,7 @@
 }
 
 [data-theme="dark"] {
-  --color-primary: theme("colors.blue.400");
+  --color-primary: #18A0BA;
   --color-secondary: theme("colors.slate.400");
   --color-text: theme("colors.gray.50");
   --color-text-offset: theme("colors.gray.400");
