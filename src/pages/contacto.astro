@@ -2,6 +2,7 @@
 import BaseLayout from "~/layouts/BaseLayout.astro";
 import ContactForm from "~/components/contact-form.astro";
 import ContentSection from "~/components/content-section.astro";
+import SpriteIcon from "~/components/sprite-icon.astro";
 import { Icon } from "astro-icon/components";
 ---
 
@@ -11,6 +12,13 @@ import { Icon } from "astro-icon/components";
 >
     <div class="animate-fadeIn space-y-24 px-8 py-32">
         <ContentSection title="Contáctanos" id="contacto">
+            <SpriteIcon
+                slot="eyebrow"
+                name="logomark"
+                lightName="logomarkLight"
+                class="size-72 animate-scaleIn"
+                id="logo-contacto"
+            />
             <Fragment slot="lead">
                 ¿Tienes un proyecto en mente? <span class="text-primary"
                     >Hablemos</span
@@ -83,3 +91,42 @@ import { Icon } from "astro-icon/components";
         </ContentSection>
     </div>
 </BaseLayout>
+
+<script>
+    // Function to update intro logo based on theme
+    const updateIntroLogo = () => {
+        const logo = document.querySelector(
+            "#logo-contacto use",
+        ) as SVGUseElement;
+        if (!logo) return;
+
+        const currentTheme = document.documentElement.dataset.theme;
+        const isLightTheme = currentTheme === "light";
+
+        if (isLightTheme) {
+            logo.setAttribute("href", "/sprite.svg#logomarkLight");
+        } else {
+            logo.setAttribute("href", "/sprite.svg#logomark");
+        }
+    };
+
+    // Listen for theme changes
+    const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            if (
+                mutation.type === "attributes" &&
+                mutation.attributeName === "data-theme"
+            ) {
+                updateIntroLogo();
+            }
+        });
+    });
+
+    observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ["data-theme"],
+    });
+
+    // Initial logo update
+    updateIntroLogo();
+</script>
