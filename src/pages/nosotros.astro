@@ -483,34 +483,44 @@ import SpriteIcon from "~/components/sprite-icon.astro";
         </ContentSection>
     </div>
 </BaseLayout>
-<script>
-    // Function to update intro logo based on theme
-    const updateIntroLogo = () => {
-        const logo = document.querySelector(
-            "#logo-contacto use",
-        ) as SVGUseElement;
-        if (!logo) return;
 
-        const currentTheme = document.documentElement.dataset.theme;
-        const isLightTheme = currentTheme === "light";
-
-        if (isLightTheme) {
-            logo.setAttribute("href", "/sprite.svg#logomarkLight");
-        } else {
-            logo.setAttribute("href", "/sprite.svg#logomark");
-        }
+<script is:inline>
+    const waitForLogo = () => {
+        return new Promise((resolve) => {
+            const check = () => {
+                const useEl = document.querySelector("#logo-contacto use");
+                if (useEl) {
+                    resolve(useEl);
+                } else {
+                    requestAnimationFrame(check);
+                }
+            };
+            check();
+        });
     };
 
-    // Listen for theme changes
+    const updateIntroLogo = async () => {
+        const logo = await waitForLogo();
+
+        const theme = document.documentElement.dataset.theme;
+        const isLight = theme === "light";
+
+        logo.setAttribute(
+            "href",
+            isLight ? "/sprite.svg#logomarkLight" : "/sprite.svg#logomark",
+        );
+    };
+
+    // Observa cambios de tema
     const observer = new MutationObserver((mutations) => {
-        mutations.forEach((mutation) => {
+        for (const mutation of mutations) {
             if (
                 mutation.type === "attributes" &&
                 mutation.attributeName === "data-theme"
             ) {
                 updateIntroLogo();
             }
-        });
+        }
     });
 
     observer.observe(document.documentElement, {
@@ -518,6 +528,6 @@ import SpriteIcon from "~/components/sprite-icon.astro";
         attributeFilter: ["data-theme"],
     });
 
-    // Initial logo update
+    // Inicial
     updateIntroLogo();
 </script>
