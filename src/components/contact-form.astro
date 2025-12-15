@@ -3,20 +3,20 @@
 ---
 
 <section class="mx-auto max-w-4xl">
-    <div class="border-primary/20 rounded-lg border-2 bg-offset p-8 shadow-xl">
+    <div class="border-primary/30 rounded-lg border-2 bg-offset p-8 shadow-xl">
         <!-- Form Type Selector -->
         <div class="mb-8 flex gap-4">
             <button
                 type="button"
                 id="btn-cotizar"
-                class="form-type-btn active hover:bg-primary/90 flex-1 rounded-lg border-2 border-primary bg-primary px-6 py-3 font-bold text-white transition-all"
+                class="form-type-btn active hover:bg-primary/90 flex-1 rounded-lg border-2 border-primary bg-primary px-6 py-3 font-bold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg"
             >
                 Cotizar Proyecto
             </button>
             <button
                 type="button"
                 id="btn-agendar"
-                class="form-type-btn hover:bg-primary/10 flex-1 rounded-lg border-2 border-primary bg-transparent px-6 py-3 font-bold text-primary transition-all"
+                class="form-type-btn hover:bg-primary/10 flex-1 rounded-lg border-2 border-primary bg-transparent px-6 py-3 font-bold text-primary transition-all duration-300 hover:scale-105"
             >
                 Agendar Reunión
             </button>
@@ -34,7 +34,10 @@
             <!-- Common Fields -->
             <div class="grid gap-6 md:grid-cols-2">
                 <div>
-                    <label for="name" class="mb-2 block font-semibold">
+                    <label
+                        for="name"
+                        class="mb-2 block font-semibold text-default"
+                    >
                         Nombre Completo <span class="text-primary">*</span>
                     </label>
                     <input
@@ -42,13 +45,16 @@
                         id="name"
                         name="name"
                         required
-                        class="w-full rounded-lg border-2 border-default bg-default px-4 py-3 text-default transition-colors focus:border-primary focus:outline-none"
+                        class="focus:ring-primary/20 w-full rounded-lg border-2 border-default bg-default px-4 py-3 text-default shadow-sm transition-all duration-300 focus:border-primary focus:shadow-md focus:outline-none focus:ring-2"
                         placeholder="Juan Pérez"
                     />
                 </div>
 
                 <div>
-                    <label for="email" class="mb-2 block font-semibold">
+                    <label
+                        for="email"
+                        class="mb-2 block font-semibold text-default"
+                    >
                         Email <span class="text-primary">*</span>
                     </label>
                     <input
@@ -56,7 +62,7 @@
                         id="email"
                         name="email"
                         required
-                        class="w-full rounded-lg border-2 border-default bg-default px-4 py-3 text-default transition-colors focus:border-primary focus:outline-none"
+                        class="focus:ring-primary/20 w-full rounded-lg border-2 border-default bg-default px-4 py-3 text-default shadow-sm transition-all duration-300 focus:border-primary focus:shadow-md focus:outline-none focus:ring-2"
                         placeholder="juan@empresa.com"
                     />
                 </div>
@@ -64,7 +70,10 @@
 
             <div class="grid gap-6 md:grid-cols-2">
                 <div>
-                    <label for="phone" class="mb-2 block font-semibold">
+                    <label
+                        for="phone"
+                        class="mb-2 block font-semibold text-default"
+                    >
                         Teléfono <span class="text-primary">*</span>
                     </label>
                     <input
@@ -72,20 +81,23 @@
                         id="phone"
                         name="phone"
                         required
-                        class="w-full rounded-lg border-2 border-default bg-default px-4 py-3 text-default transition-colors focus:border-primary focus:outline-none"
+                        class="focus:ring-primary/20 w-full rounded-lg border-2 border-default bg-default px-4 py-3 text-default shadow-sm transition-all duration-300 focus:border-primary focus:shadow-md focus:outline-none focus:ring-2"
                         placeholder="+505 8888-8888"
                     />
                 </div>
 
                 <div>
-                    <label for="company" class="mb-2 block font-semibold">
+                    <label
+                        for="company"
+                        class="mb-2 block font-semibold text-default"
+                    >
                         Empresa
                     </label>
                     <input
                         type="text"
                         id="company"
                         name="company"
-                        class="w-full rounded-lg border-2 border-default bg-default px-4 py-3 text-default transition-colors focus:border-primary focus:outline-none"
+                        class="focus:ring-primary/20 w-full rounded-lg border-2 border-default bg-default px-4 py-3 text-default shadow-sm transition-all duration-300 focus:border-primary focus:shadow-md focus:outline-none focus:ring-2"
                         placeholder="Mi Empresa S.A."
                     />
                 </div>
@@ -94,13 +106,16 @@
             <!-- Cotizar Fields -->
             <div id="cotizar-fields" class="space-y-6">
                 <div>
-                    <label for="project-type" class="mb-2 block font-semibold">
+                    <label
+                        for="project-type"
+                        class="mb-2 block font-semibold text-default"
+                    >
                         Tipo de Proyecto <span class="text-primary">*</span>
                     </label>
                     <select
                         id="project-type"
                         name="projectType"
-                        class="w-full rounded-lg border-2 border-default bg-default px-4 py-3 text-default transition-colors focus:border-primary focus:outline-none"
+                        class="focus:ring-primary/20 w-full rounded-lg border-2 border-default bg-default px-4 py-3 text-default shadow-sm transition-all duration-300 focus:border-primary focus:shadow-md focus:outline-none focus:ring-2"
                     >
                         <option value="">Seleccione una opción</option>
                         <option value="web">Desarrollo Web</option>
@@ -115,13 +130,16 @@
                 </div>
 
                 <div>
-                    <label for="budget" class="mb-2 block font-semibold">
+                    <label
+                        for="budget"
+                        class="mb-2 block font-semibold text-default"
+                    >
                         Presupuesto Estimado
                     </label>
                     <select
                         id="budget"
                         name="budget"
-                        class="w-full rounded-lg border-2 border-default bg-default px-4 py-3 text-default transition-colors focus:border-primary focus:outline-none"
+                        class="focus:ring-primary/20 w-full rounded-lg border-2 border-default bg-default px-4 py-3 text-default shadow-sm transition-all duration-300 focus:border-primary focus:shadow-md focus:outline-none focus:ring-2"
                     >
                         <option value="">Seleccione un rango</option>
                         <option value="5k-10k">$5,000 - $10,000</option>
@@ -132,13 +150,16 @@
                 </div>
 
                 <div>
-                    <label for="timeline" class="mb-2 block font-semibold">
+                    <label
+                        for="timeline"
+                        class="mb-2 block font-semibold text-default"
+                    >
                         Tiempo Estimado de Entrega
                     </label>
                     <select
                         id="timeline"
                         name="timeline"
-                        class="w-full rounded-lg border-2 border-default bg-default px-4 py-3 text-default transition-colors focus:border-primary focus:outline-none"
+                        class="focus:ring-primary/20 w-full rounded-lg border-2 border-default bg-default px-4 py-3 text-default shadow-sm transition-all duration-300 focus:border-primary focus:shadow-md focus:outline-none focus:ring-2"
                     >
                         <option value="">Seleccione un plazo</option>
                         <option value="1-month">1 mes</option>
@@ -155,7 +176,7 @@
                     <div>
                         <label
                             for="preferred-date"
-                            class="mb-2 block font-semibold"
+                            class="mb-2 block font-semibold text-default"
                         >
                             Fecha Preferida <span class="text-primary">*</span>
                         </label>
@@ -163,21 +184,21 @@
                             type="date"
                             id="preferred-date"
                             name="preferredDate"
-                            class="w-full rounded-lg border-2 border-default bg-default px-4 py-3 text-default transition-colors focus:border-primary focus:outline-none"
+                            class="focus:ring-primary/20 w-full rounded-lg border-2 border-default bg-default px-4 py-3 text-default shadow-sm transition-all duration-300 focus:border-primary focus:shadow-md focus:outline-none focus:ring-2"
                         />
                     </div>
 
                     <div>
                         <label
                             for="preferred-time"
-                            class="mb-2 block font-semibold"
+                            class="mb-2 block font-semibold text-default"
                         >
                             Hora Preferida <span class="text-primary">*</span>
                         </label>
                         <select
                             id="preferred-time"
                             name="preferredTime"
-                            class="w-full rounded-lg border-2 border-default bg-default px-4 py-3 text-default transition-colors focus:border-primary focus:outline-none"
+                            class="focus:ring-primary/20 w-full rounded-lg border-2 border-default bg-default px-4 py-3 text-default shadow-sm transition-all duration-300 focus:border-primary focus:shadow-md focus:outline-none focus:ring-2"
                         >
                             <option value="">Seleccione una hora</option>
                             <option value="9am">9:00 AM</option>
@@ -191,13 +212,16 @@
                 </div>
 
                 <div>
-                    <label for="meeting-type" class="mb-2 block font-semibold">
+                    <label
+                        for="meeting-type"
+                        class="mb-2 block font-semibold text-default"
+                    >
                         Tipo de Reunión <span class="text-primary">*</span>
                     </label>
                     <select
                         id="meeting-type"
                         name="meetingType"
-                        class="w-full rounded-lg border-2 border-default bg-default px-4 py-3 text-default transition-colors focus:border-primary focus:outline-none"
+                        class="focus:ring-primary/20 w-full rounded-lg border-2 border-default bg-default px-4 py-3 text-default shadow-sm transition-all duration-300 focus:border-primary focus:shadow-md focus:outline-none focus:ring-2"
                     >
                         <option value="">Seleccione una opción</option>
                         <option value="virtual">Virtual (Zoom/Meet)</option>
@@ -209,7 +233,10 @@
 
             <!-- Message Field (Common) -->
             <div>
-                <label for="message" class="mb-2 block font-semibold">
+                <label
+                    for="message"
+                    class="mb-2 block font-semibold text-default"
+                >
                     Mensaje <span class="text-primary">*</span>
                 </label>
                 <textarea
@@ -217,7 +244,7 @@
                     name="message"
                     required
                     rows="5"
-                    class="w-full rounded-lg border-2 border-default bg-default px-4 py-3 text-default transition-colors focus:border-primary focus:outline-none"
+                    class="focus:ring-primary/20 w-full rounded-lg border-2 border-default bg-default px-4 py-3 text-default shadow-sm transition-all duration-300 focus:border-primary focus:shadow-md focus:outline-none focus:ring-2"
                     placeholder="Cuéntanos más sobre tu proyecto o los temas que deseas discutir..."
                 ></textarea>
             </div>
@@ -226,7 +253,7 @@
             <div class="flex justify-center">
                 <button
                     type="submit"
-                    class="hover:bg-primary/90 rounded-lg bg-primary px-12 py-4 font-bold text-white transition-all hover:shadow-lg"
+                    class="hover:bg-primary/90 group rounded-lg bg-primary px-12 py-4 font-bold text-white transition-all duration-300 hover:scale-105 hover:shadow-xl"
                 >
                     <span id="submit-text">Enviar Cotización</span>
                 </button>
@@ -236,7 +263,7 @@
         <!-- Success Message -->
         <div
             id="success-message"
-            class="bg-primary/20 mt-6 hidden rounded-lg p-6 text-center"
+            class="bg-primary/20 mt-6 hidden rounded-lg border-2 border-primary p-6 text-center"
         >
             <p class="font-semibold text-primary text-lg">
                 ¡Gracias por contactarnos! Nos pondremos en contacto contigo
