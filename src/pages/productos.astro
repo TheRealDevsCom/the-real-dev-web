@@ -2,6 +2,7 @@
 import BaseLayout from "~/layouts/BaseLayout.astro";
 import Compatibility from "~/components/compatibility.astro";
 import ContentSection from "~/components/content-section.astro";
+import SpriteIcon from "~/components/sprite-icon.astro";
 import { Icon } from "astro-icon/components";
 ---
 
@@ -9,12 +10,13 @@ import { Icon } from "astro-icon/components";
     title="Productos Frontline - TheRealDevs"
     description="Nuestros productos y soluciones tecnológicas de vanguardia para empresas modernas."
 >
-    <div class="space-y-24 px-8 py-32">
+    <div class="animate-fadeIn space-y-24 px-8 py-32">
         <ContentSection title="Productos Frontline" id="productos">
-            <Icon
+            <SpriteIcon
                 slot="eyebrow"
                 name="mdi:package-variant"
-                class="size-32 text-primary"
+                class="size-32 animate-scaleIn text-primary"
+                id="productos-icon"
             />
             <Fragment slot="lead">
                 Soluciones <span class="text-primary">innovadoras</span> y productos
@@ -187,12 +189,18 @@ import { Icon } from "astro-icon/components";
             </div>
 
             <!-- CTA -->
-            <div class="mt-12 text-center">
+            <div
+                class="mt-12 animate-fadeIn text-center"
+                style="animation-delay: 300ms;"
+            >
                 <a
                     href="/contacto"
-                    class="hover:bg-primary/90 inline-flex items-center gap-3 rounded-lg bg-primary px-8 py-4 font-bold text-white transition-all hover:shadow-lg"
+                    class="hover:bg-primary/90 group inline-flex items-center gap-3 rounded-lg bg-primary px-8 py-4 font-bold text-white transition-all duration-300 hover:scale-105 hover:shadow-xl"
                 >
-                    <Icon name="mdi:information" class="size-6" />
+                    <Icon
+                        name="mdi:information"
+                        class="size-6 transition-transform duration-300 group-hover:rotate-12"
+                    />
                     <span>Más Información</span>
                 </a>
             </div>

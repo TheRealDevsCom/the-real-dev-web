@@ -1,13 +1,82 @@
 ---
 interface Props {
     name: string;
+    lightName?: string;
     class?: string;
     id?: string;
 }
 
-const { name, class: className, id } = Astro.props;
+const { name, lightName, class: className, id } = Astro.props;
+const lightIcon = lightName || `${name}Light`;
+const hasThemeVariant = lightName !== undefined || name !== lightIcon;
 ---
 
-<svg class={className} id={id}>
+<svg class={className} id={id} data-dark-icon={name} data-light-icon={lightIcon} data-has-theme={hasThemeVariant}>
     <use href={`/sprite.svg#${name}`}></use>
 </svg>
+
+{hasThemeVariant && (
+    <script is:inline>
+        // This script runs inline to ensure it works in production
+        (function() {
+            function initThemeAwareIcon(iconId) {
+                const updateIcon = () => {
+                    const icon = document.querySelector(`#${iconId} use`);
+                    if (!icon) return;
+
+                    const svg = document.querySelector(`#${iconId}`);
+                    const currentTheme = document.documentElement.dataset.theme;
+                    const isLightTheme = currentTheme === "light";
+                    
+                    const darkIcon = svg.getAttribute('data-dark-icon');
+                    const lightIcon = svg.getAttribute('data-light-icon');
+                    
+                    if (isLightTheme) {
+                        icon.setAttribute("href", `/sprite.svg#${lightIcon}`);
+                    } else {
+                        icon.setAttribute("href", `/sprite.svg#${darkIcon}`);
+                    }
+                };
+
+                // Listen for theme changes
+                const observer = new MutationObserver((mutations) => {
+                    mutations.forEach((mutation) => {
+                        if (
+                            mutation.type === "attributes" &&
+                            mutation.attributeName === "data-theme"
+                        ) {
+                            updateIcon();
+                        }
+                    });
+                });
+
+                observer.observe(document.documentElement, {
+                    attributes: true,
+                    attributeFilter: ["data-theme"],
+                });
+
+                // Initial icon update
+                updateIcon();
+            }
+
+            // Wait for DOM to be ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', function() {
+                    const icons = document.querySelectorAll('svg[data-has-theme="true"]');
+                    icons.forEach(icon => {
+                        if (icon.id) {
+                            initThemeAwareIcon(icon.id);
+                        }
+                    });
+                });
+            } else {
+                const icons = document.querySelectorAll('svg[data-has-theme="true"]');
+                icons.forEach(icon => {
+                    if (icon.id) {
+                        initThemeAwareIcon(icon.id);
+                    }
+                });
+            }
+        })();
+    </script>
+)}

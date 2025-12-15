@@ -4,33 +4,47 @@ import ContentSection from "~/components/content-section.astro";
 ---
 
 <ContentSection title="Somos The Real Devs" id="intro">
-  <SpriteIcon slot="eyebrow" name="logomark" class="size-72" id="logo-intro" />
+  <SpriteIcon
+    slot="eyebrow"
+    name="logomark"
+    class="size-72 animate-scaleIn"
+    id="logo-intro"
+  />
   <Fragment slot="lead">
-    Una agencia de desarrollo especializada en sistemas
-    <span class="text-primary">empresariales,</span>Pyme,
-    <span class="text-primary">Salesforce</span>
-    integraciones <span class="text-primary"
-      >y plataformas web de alto rendimiento.</span
-    >
+    <span class="animate-fadeIn">
+      Una agencia de desarrollo especializada en sistemas
+      <span class="text-primary">empresariales,</span>Pyme,
+      <span class="text-primary">Salesforce</span>
+      integraciones <span class="text-primary"
+        >y plataformas web de alto rendimiento.</span
+      >
+    </span>
   </Fragment>
-  <div class="grid grid-cols-1 gap-2 sm:grid-cols-2">
+  <div class="grid animate-slideUp grid-cols-1 gap-2 sm:grid-cols-2">
     <a
       href="/contacto#cotizar"
-      class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4 transition-all hover:bg-primary hover:text-white"
+      class="group flex items-center justify-center gap-3 border-2 border-current px-6 py-4 transition-all duration-300 hover:scale-105 hover:bg-primary hover:text-white hover:shadow-lg"
     >
-      <SpriteIcon name="mdi:telescope" class="size-8" />
+      <SpriteIcon
+        name="mdi:telescope"
+        class="size-8 transition-transform duration-300 group-hover:rotate-12"
+        id="icon-cotizar"
+      />
       <span>Cotizar Proyecto</span>
     </a>
     <a
       href="/contacto#agendar"
-      class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4 transition-all hover:bg-primary hover:text-white"
+      class="group flex items-center justify-center gap-3 border-2 border-current px-6 py-4 transition-all duration-300 hover:scale-105 hover:bg-primary hover:text-white hover:shadow-lg"
     >
-      <SpriteIcon name="mdi:rocket" class="size-8" />
+      <SpriteIcon
+        name="mdi:rocket"
+        class="size-8 transition-transform duration-300 group-hover:-translate-y-1"
+        id="icon-agendar"
+      />
       <span>Agenda una reunión</span>
     </a>
   </div>
 </ContentSection>
-
 <script>
   // Function to update intro logo based on theme
   const updateIntroLogo = () => {

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "~/layouts/BaseLayout.astro";
 import ContentSection from "~/components/content-section.astro";
+import SpriteIcon from "~/components/sprite-icon.astro";
 import { Icon } from "astro-icon/components";
 
 const blogPosts = [
@@ -35,9 +36,14 @@ const blogPosts = [
     title="Blog - TheRealDevs"
     description="Artículos, tutoriales y recursos sobre desarrollo de software, tecnología y mejores prácticas."
 >
-    <div class="space-y-24 px-8 py-32">
+    <div class="animate-fadeIn space-y-24 px-8 py-32">
         <ContentSection title="Blog" id="blog">
-            <Icon slot="eyebrow" name="mdi:post" class="size-32 text-primary" />
+            <SpriteIcon
+                slot="eyebrow"
+                name="mdi:post"
+                class="size-32 animate-scaleIn text-primary"
+                id="blog-icon"
+            />
             <Fragment slot="lead">
                 Artículos, tutoriales y <span class="text-primary"
                     >recursos</span
