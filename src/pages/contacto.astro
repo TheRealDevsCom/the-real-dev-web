@@ -91,3 +91,42 @@ import { Icon } from "astro-icon/components";
         </ContentSection>
     </div>
 </BaseLayout>
+
+<script>
+    // Function to update intro logo based on theme
+    const updateIntroLogo = () => {
+        const logo = document.querySelector(
+            "#logo-contacto use",
+        ) as SVGUseElement;
+        if (!logo) return;
+
+        const currentTheme = document.documentElement.dataset.theme;
+        const isLightTheme = currentTheme === "light";
+
+        if (isLightTheme) {
+            logo.setAttribute("href", "/sprite.svg#logomarkLight");
+        } else {
+            logo.setAttribute("href", "/sprite.svg#logomark");
+        }
+    };
+
+    // Listen for theme changes
+    const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            if (
+                mutation.type === "attributes" &&
+                mutation.attributeName === "data-theme"
+            ) {
+                updateIntroLogo();
+            }
+        });
+    });
+
+    observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ["data-theme"],
+    });
+
+    // Initial logo update
+    updateIntroLogo();
+</script>
