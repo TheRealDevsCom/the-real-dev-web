@@ -2,6 +2,7 @@
 import BaseLayout from "~/layouts/BaseLayout.astro";
 import Showcase from "~/components/showcase.astro";
 import ContentSection from "~/components/content-section.astro";
+import SpriteIcon from "~/components/sprite-icon.astro";
 import { Icon } from "astro-icon/components";
 ---
 
@@ -9,12 +10,13 @@ import { Icon } from "astro-icon/components";
     title="Portafolio - TheRealDevs"
     description="Conoce nuestros proyectos exitosos y casos de éxito en desarrollo de software."
 >
-    <div class="space-y-24 px-8 py-32">
+    <div class="animate-fadeIn space-y-24 px-8 py-32">
         <ContentSection title="Nuestro Portafolio" id="portafolio">
-            <Icon
+            <SpriteIcon
                 slot="eyebrow"
                 name="mdi:briefcase"
-                class="size-32 text-primary"
+                class="size-32 animate-scaleIn text-primary"
+                id="portafolio-icon"
             />
             <Fragment slot="lead">
                 Proyectos <span class="text-primary">exitosos</span> que demuestran
@@ -216,12 +218,18 @@ import { Icon } from "astro-icon/components";
             </div>
 
             <!-- CTA -->
-            <div class="mt-12 text-center">
+            <div
+                class="mt-12 animate-fadeIn text-center"
+                style="animation-delay: 300ms;"
+            >
                 <a
                     href="/contacto"
-                    class="hover:bg-primary/90 inline-flex items-center gap-3 rounded-lg bg-primary px-8 py-4 font-bold text-white transition-all hover:shadow-lg"
+                    class="hover:bg-primary/90 group inline-flex items-center gap-3 rounded-lg bg-primary px-8 py-4 font-bold text-white transition-all duration-300 hover:scale-105 hover:shadow-xl"
                 >
-                    <Icon name="mdi:rocket" class="size-6" />
+                    <Icon
+                        name="mdi:rocket"
+                        class="size-6 transition-transform duration-300 group-hover:-translate-y-1"
+                    />
                     <span>Inicia Tu Proyecto</span>
                 </a>
             </div>

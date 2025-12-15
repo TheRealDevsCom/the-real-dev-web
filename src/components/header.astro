@@ -25,7 +25,11 @@ const navItems: Array<NavItem> = [
     isHomePage ? "absolute bottom-0" : "fixed-header",
   ]}
 >
-  <a class="flex items-center gap-3 hover:!text-default" href="/">
+  <a
+    class="flex items-center gap-3 outline-none hover:!text-default focus:outline-none focus-visible:outline-none active:outline-none"
+    href="/"
+    style="outline: none !important;"
+  >
     <h1 class="sr-only">TheRealDevs</h1>
     <SpriteIcon
       name="logomark"
@@ -198,5 +202,14 @@ const navItems: Array<NavItem> = [
   }
   #page-header.fixed-header :global(#logo-main) {
     @apply translate-y-0 opacity-100;
+  }
+
+  /* Remove focus outline only from logo link */
+  #page-header > a:first-of-type:focus,
+  #page-header > a:first-of-type:focus-visible,
+  #page-header > a:first-of-type:active {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
   }
 </style>

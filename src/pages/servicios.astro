@@ -2,6 +2,7 @@
 import BaseLayout from "~/layouts/BaseLayout.astro";
 import Features from "~/components/features.astro";
 import ContentSection from "~/components/content-section.astro";
+import SpriteIcon from "~/components/sprite-icon.astro";
 import { Icon } from "astro-icon/components";
 ---
 
@@ -9,9 +10,14 @@ import { Icon } from "astro-icon/components";
     title="Servicios - TheRealDevs"
     description="Servicios de desarrollo de software empresarial, aplicaciones web, móviles, integraciones Salesforce y más."
 >
-    <div class="space-y-24 px-8 py-32">
+    <div class="animate-fadeIn space-y-24 px-8 py-32">
         <ContentSection title="Nuestros Servicios" id="servicios">
-            <Icon slot="eyebrow" name="mdi:cog" class="size-32 text-primary" />
+            <SpriteIcon
+                slot="eyebrow"
+                name="mdi:cog"
+                class="size-32 animate-scaleIn text-primary"
+                id="services-icon"
+            />
             <Fragment slot="lead">
                 Ofrecemos soluciones <span class="text-primary">completas</span>
                 de desarrollo de software para <span class="text-primary"
@@ -22,15 +28,21 @@ import { Icon } from "astro-icon/components";
             <div class="grid gap-12 md:grid-cols-2">
                 <!-- Service 1 -->
                 <div
-                    class="flex flex-col gap-4 rounded-xl border border-default bg-offset p-8 shadow-sm"
+                    class="hover:from-primary/5 hover:to-primary/10 group flex animate-slideUp flex-col gap-4 rounded-xl border border-default bg-offset p-8 shadow-sm transition-all duration-500 hover:scale-[1.02] hover:border-primary hover:bg-gradient-to-br hover:shadow-2xl"
+                    style="transform-style: preserve-3d; animation-delay: 0ms;"
                 >
                     <div
-                        class="bg-primary/20 flex size-16 items-center justify-center rounded-full text-primary"
+                        class="bg-primary/20 group-hover:bg-primary/30 flex size-16 items-center justify-center rounded-full text-primary transition-all duration-300 group-hover:scale-110"
                     >
-                        <Icon name="mdi:monitor-dashboard" class="size-8" />
+                        <Icon
+                            name="mdi:monitor-dashboard"
+                            class="size-8 transition-transform duration-300 group-hover:rotate-12"
+                        />
                     </div>
                     <div>
-                        <h3 class="font-bold text-2xl">
+                        <h3
+                            class="font-bold transition-colors duration-300 text-2xl group-hover:text-primary"
+                        >
                             Desarrollo de Software a Medida
                         </h3>
                         <p class="mt-4 text-offset">
@@ -59,15 +71,21 @@ import { Icon } from "astro-icon/components";
 
                 <!-- Service 2 -->
                 <div
-                    class="flex flex-col gap-4 rounded-xl border border-default bg-offset p-8 shadow-sm"
+                    class="hover:from-primary/5 hover:to-primary/10 group flex animate-slideUp flex-col gap-4 rounded-xl border border-default bg-offset p-8 shadow-sm transition-all duration-500 hover:scale-[1.02] hover:border-primary hover:bg-gradient-to-br hover:shadow-2xl"
+                    style="transform-style: preserve-3d; animation-delay: 100ms;"
                 >
                     <div
-                        class="bg-primary/20 flex size-16 items-center justify-center rounded-full text-primary"
+                        class="bg-primary/20 group-hover:bg-primary/30 flex size-16 items-center justify-center rounded-full text-primary transition-all duration-300 group-hover:scale-110"
                     >
-                        <Icon name="mdi:cloud-check" class="size-8" />
+                        <Icon
+                            name="mdi:cloud-check"
+                            class="size-8 transition-transform duration-300 group-hover:rotate-12"
+                        />
                     </div>
                     <div>
-                        <h3 class="font-bold text-2xl">
+                        <h3
+                            class="font-bold transition-colors duration-300 text-2xl group-hover:text-primary"
+                        >
                             Soluciones Salesforce
                         </h3>
                         <p class="mt-4 text-offset">
@@ -95,15 +113,23 @@ import { Icon } from "astro-icon/components";
 
                 <!-- Service 3 -->
                 <div
-                    class="flex flex-col gap-4 rounded-xl border border-default bg-offset p-8 shadow-sm"
+                    class="hover:from-primary/5 hover:to-primary/10 group flex animate-slideUp flex-col gap-4 rounded-xl border border-default bg-offset p-8 shadow-sm transition-all duration-500 hover:scale-[1.02] hover:border-primary hover:bg-gradient-to-br hover:shadow-2xl"
+                    style="transform-style: preserve-3d; animation-delay: 200ms;"
                 >
                     <div
-                        class="bg-primary/20 flex size-16 items-center justify-center rounded-full text-primary"
+                        class="bg-primary/20 group-hover:bg-primary/30 flex size-16 items-center justify-center rounded-full text-primary transition-all duration-300 group-hover:scale-110"
                     >
-                        <Icon name="mdi:cellphone" class="size-8" />
+                        <Icon
+                            name="mdi:cellphone"
+                            class="size-8 transition-transform duration-300 group-hover:rotate-12"
+                        />
                     </div>
                     <div>
-                        <h3 class="font-bold text-2xl">Aplicaciones Móviles</h3>
+                        <h3
+                            class="font-bold transition-colors duration-300 text-2xl group-hover:text-primary"
+                        >
+                            Aplicaciones Móviles
+                        </h3>
                         <p class="mt-4 text-offset">
                             Lleva tu negocio al bolsillo de tus clientes con
                             aplicaciones nativas y multiplataforma de alto
@@ -128,15 +154,21 @@ import { Icon } from "astro-icon/components";
 
                 <!-- Service 4 -->
                 <div
-                    class="flex flex-col gap-4 rounded-xl border border-default bg-offset p-8 shadow-sm"
+                    class="hover:from-primary/5 hover:to-primary/10 group flex animate-slideUp flex-col gap-4 rounded-xl border border-default bg-offset p-8 shadow-sm transition-all duration-500 hover:scale-[1.02] hover:border-primary hover:bg-gradient-to-br hover:shadow-2xl"
+                    style="transform-style: preserve-3d; animation-delay: 300ms;"
                 >
                     <div
-                        class="bg-primary/20 flex size-16 items-center justify-center rounded-full text-primary"
+                        class="bg-primary/20 group-hover:bg-primary/30 flex size-16 items-center justify-center rounded-full text-primary transition-all duration-300 group-hover:scale-110"
                     >
-                        <Icon name="mdi:server-network" class="size-8" />
+                        <Icon
+                            name="mdi:server-network"
+                            class="size-8 transition-transform duration-300 group-hover:rotate-12"
+                        />
                     </div>
                     <div>
-                        <h3 class="font-bold text-2xl">
+                        <h3
+                            class="font-bold transition-colors duration-300 text-2xl group-hover:text-primary"
+                        >
                             Infraestructura & Cloud
                         </h3>
                         <p class="mt-4 text-offset">
@@ -163,15 +195,23 @@ import { Icon } from "astro-icon/components";
 
                 <!-- Service 5 -->
                 <div
-                    class="flex flex-col gap-4 rounded-xl border border-default bg-offset p-8 shadow-sm"
+                    class="hover:from-primary/5 hover:to-primary/10 group flex animate-slideUp flex-col gap-4 rounded-xl border border-default bg-offset p-8 shadow-sm transition-all duration-500 hover:scale-[1.02] hover:border-primary hover:bg-gradient-to-br hover:shadow-2xl"
+                    style="transform-style: preserve-3d; animation-delay: 400ms;"
                 >
                     <div
-                        class="bg-primary/20 flex size-16 items-center justify-center rounded-full text-primary"
+                        class="bg-primary/20 group-hover:bg-primary/30 flex size-16 items-center justify-center rounded-full text-primary transition-all duration-300 group-hover:scale-110"
                     >
-                        <Icon name="mdi:lightbulb-on" class="size-8" />
+                        <Icon
+                            name="mdi:lightbulb-on"
+                            class="size-8 transition-transform duration-300 group-hover:rotate-12"
+                        />
                     </div>
                     <div>
-                        <h3 class="font-bold text-2xl">Consultoría IT</h3>
+                        <h3
+                            class="font-bold transition-colors duration-300 text-2xl group-hover:text-primary"
+                        >
+                            Consultoría IT
+                        </h3>
                         <p class="mt-4 text-offset">
                             Acompañamos tu transformación digital con estrategia
                             y experiencia técnica. Evaluamos tus sistemas
@@ -197,15 +237,21 @@ import { Icon } from "astro-icon/components";
 
                 <!-- Service 6 -->
                 <div
-                    class="flex flex-col gap-4 rounded-xl border border-default bg-offset p-8 shadow-sm"
+                    class="hover:from-primary/5 hover:to-primary/10 group flex animate-slideUp flex-col gap-4 rounded-xl border border-default bg-offset p-8 shadow-sm transition-all duration-500 hover:scale-[1.02] hover:border-primary hover:bg-gradient-to-br hover:shadow-2xl"
+                    style="transform-style: preserve-3d; animation-delay: 500ms;"
                 >
                     <div
-                        class="bg-primary/20 flex size-16 items-center justify-center rounded-full text-primary"
+                        class="bg-primary/20 group-hover:bg-primary/30 flex size-16 items-center justify-center rounded-full text-primary transition-all duration-300 group-hover:scale-110"
                     >
-                        <Icon name="mdi:rocket-launch" class="size-8" />
+                        <Icon
+                            name="mdi:rocket-launch"
+                            class="size-8 transition-transform duration-300 group-hover:rotate-12"
+                        />
                     </div>
                     <div>
-                        <h3 class="font-bold text-2xl">
+                        <h3
+                            class="font-bold transition-colors duration-300 text-2xl group-hover:text-primary"
+                        >
                             Productos SaaS Propios
                         </h3>
                         <p class="mt-4 text-offset">
@@ -232,12 +278,18 @@ import { Icon } from "astro-icon/components";
             </div>
 
             <!-- CTA -->
-            <div class="mt-12 text-center">
+            <div
+                class="mt-12 animate-fadeIn text-center"
+                style="animation-delay: 600ms;"
+            >
                 <a
                     href="/contacto"
-                    class="hover:bg-primary/90 inline-flex items-center gap-3 rounded-lg bg-primary px-8 py-4 font-bold text-white transition-all hover:shadow-lg"
+                    class="hover:bg-primary/90 group inline-flex items-center gap-3 rounded-lg bg-primary px-8 py-4 font-bold text-white transition-all duration-300 hover:scale-105 hover:shadow-xl"
                 >
-                    <Icon name="mdi:rocket" class="size-6" />
+                    <Icon
+                        name="mdi:rocket"
+                        class="size-6 transition-transform duration-300 group-hover:-translate-y-1"
+                    />
                     <span>Solicitar Cotización</span>
                 </a>
             </div>

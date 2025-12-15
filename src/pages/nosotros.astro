@@ -9,13 +9,13 @@ import SpriteIcon from "~/components/sprite-icon.astro";
     title="Nosotros - TheRealDevs"
     description="Conoce a TheRealDevs, tu socio en desarrollo de software e innovación tecnológica."
 >
-    <div class="space-y-24 px-8 py-32">
+    <div class="animate-fadeIn space-y-24 px-8 py-32">
         <ContentSection title="Sobre Nosotros" id="nosotros">
             <SpriteIcon
                 slot="eyebrow"
                 name="logomark"
-                class="size-72"
-                id="logo-intro"
+                class="size-72 animate-scaleIn"
+                id="logo-contacto"
             />
             <Fragment slot="lead">
                 Somos un equipo de <span class="text-primary"
@@ -28,10 +28,14 @@ import SpriteIcon from "~/components/sprite-icon.astro";
             <!-- Mission & Vision -->
             <div class="grid gap-8 md:grid-cols-2">
                 <div
-                    class="border-primary/30 rounded-lg border-2 bg-offset p-8"
+                    class="border-primary/30 group animate-slideUp rounded-lg border-2 bg-offset p-8 transition-all duration-500 hover:scale-105 hover:shadow-xl"
+                    style="animation-delay: 0ms;"
                 >
                     <div class="mb-4 flex items-center gap-4">
-                        <Icon name="mdi:target" class="size-12 text-primary" />
+                        <Icon
+                            name="mdi:target"
+                            class="size-12 text-primary transition-transform duration-300 group-hover:rotate-12"
+                        />
                         <h3 class="font-bold text-2xl">Nuestra Misión</h3>
                     </div>
                     <p class="text-offset text-lg">
@@ -43,10 +47,14 @@ import SpriteIcon from "~/components/sprite-icon.astro";
                 </div>
 
                 <div
-                    class="border-primary/30 rounded-lg border-2 bg-offset p-8"
+                    class="border-primary/30 group animate-slideUp rounded-lg border-2 bg-offset p-8 transition-all duration-500 hover:scale-105 hover:shadow-xl"
+                    style="animation-delay: 100ms;"
                 >
                     <div class="mb-4 flex items-center gap-4">
-                        <Icon name="mdi:eye" class="size-12 text-primary" />
+                        <Icon
+                            name="mdi:eye"
+                            class="size-12 text-primary transition-transform duration-300 group-hover:rotate-12"
+                        />
                         <h3 class="font-bold text-2xl">Nuestra Visión</h3>
                     </div>
                     <p class="text-offset text-lg">
@@ -59,20 +67,27 @@ import SpriteIcon from "~/components/sprite-icon.astro";
 
             <!-- Values -->
             <div class="mt-16">
-                <h3 class="mb-8 text-center font-bold text-3xl">
+                <h3 class="mb-8 animate-fadeIn text-center font-bold text-3xl">
                     Nuestros Valores
                 </h3>
                 <div class="grid gap-6 md:grid-cols-3">
                     <div
-                        class="flex flex-col items-center gap-4 rounded-lg border border-default bg-offset p-6 text-center"
+                        class="group flex animate-slideUp flex-col items-center gap-4 rounded-lg border border-default bg-offset p-6 text-center transition-all duration-300 hover:scale-105 hover:border-primary hover:shadow-xl"
+                        style="animation-delay: 0ms;"
                     >
-                        <div class="rounded-full border-2 border-primary p-4">
+                        <div
+                            class="group-hover:bg-primary/10 rounded-full border-2 border-primary p-4 transition-all duration-300 group-hover:scale-110"
+                        >
                             <Icon
                                 name="mdi:lightbulb"
-                                class="size-10 text-primary"
+                                class="size-10 text-primary transition-transform duration-300 group-hover:rotate-12"
                             />
                         </div>
-                        <h4 class="font-bold text-xl">Innovación</h4>
+                        <h4
+                            class="font-bold transition-colors duration-300 text-xl group-hover:text-primary"
+                        >
+                            Innovación
+                        </h4>
                         <p class="text-offset">
                             Buscamos constantemente nuevas formas de resolver
                             problemas y mejorar procesos.
@@ -80,15 +95,22 @@ import SpriteIcon from "~/components/sprite-icon.astro";
                     </div>
 
                     <div
-                        class="flex flex-col items-center gap-4 rounded-lg border border-default bg-offset p-6 text-center"
+                        class="group flex animate-slideUp flex-col items-center gap-4 rounded-lg border border-default bg-offset p-6 text-center transition-all duration-300 hover:scale-105 hover:border-primary hover:shadow-xl"
+                        style="animation-delay: 100ms;"
                     >
-                        <div class="rounded-full border-2 border-primary p-4">
+                        <div
+                            class="group-hover:bg-primary/10 rounded-full border-2 border-primary p-4 transition-all duration-300 group-hover:scale-110"
+                        >
                             <Icon
                                 name="mdi:shield-check"
-                                class="size-10 text-primary"
+                                class="size-10 text-primary transition-transform duration-300 group-hover:rotate-12"
                             />
                         </div>
-                        <h4 class="font-bold text-xl">Calidad</h4>
+                        <h4
+                            class="font-bold transition-colors duration-300 text-xl group-hover:text-primary"
+                        >
+                            Calidad
+                        </h4>
                         <p class="text-offset">
                             Nos comprometemos a entregar productos de la más
                             alta calidad en cada proyecto.
@@ -96,15 +118,22 @@ import SpriteIcon from "~/components/sprite-icon.astro";
                     </div>
 
                     <div
-                        class="flex flex-col items-center gap-4 rounded-lg border border-default bg-offset p-6 text-center"
+                        class="group flex animate-slideUp flex-col items-center gap-4 rounded-lg border border-default bg-offset p-6 text-center transition-all duration-300 hover:scale-105 hover:border-primary hover:shadow-xl"
+                        style="animation-delay: 200ms;"
                     >
-                        <div class="rounded-full border-2 border-primary p-4">
+                        <div
+                            class="group-hover:bg-primary/10 rounded-full border-2 border-primary p-4 transition-all duration-300 group-hover:scale-110"
+                        >
                             <Icon
                                 name="mdi:handshake"
-                                class="size-10 text-primary"
+                                class="size-10 text-primary transition-transform duration-300 group-hover:rotate-12"
                             />
                         </div>
-                        <h4 class="font-bold text-xl">Compromiso</h4>
+                        <h4
+                            class="font-bold transition-colors duration-300 text-xl group-hover:text-primary"
+                        >
+                            Compromiso
+                        </h4>
                         <p class="text-offset">
                             El éxito de nuestros clientes es nuestro éxito.
                             Trabajamos como verdaderos socios.
@@ -112,15 +141,22 @@ import SpriteIcon from "~/components/sprite-icon.astro";
                     </div>
 
                     <div
-                        class="flex flex-col items-center gap-4 rounded-lg border border-default bg-offset p-6 text-center"
+                        class="group flex animate-slideUp flex-col items-center gap-4 rounded-lg border border-default bg-offset p-6 text-center transition-all duration-300 hover:scale-105 hover:border-primary hover:shadow-xl"
+                        style="animation-delay: 300ms;"
                     >
-                        <div class="rounded-full border-2 border-primary p-4">
+                        <div
+                            class="group-hover:bg-primary/10 rounded-full border-2 border-primary p-4 transition-all duration-300 group-hover:scale-110"
+                        >
                             <Icon
                                 name="mdi:account-group"
-                                class="size-10 text-primary"
+                                class="size-10 text-primary transition-transform duration-300 group-hover:rotate-12"
                             />
                         </div>
-                        <h4 class="font-bold text-xl">Colaboración</h4>
+                        <h4
+                            class="font-bold transition-colors duration-300 text-xl group-hover:text-primary"
+                        >
+                            Colaboración
+                        </h4>
                         <p class="text-offset">
                             Creemos en el poder del trabajo en equipo y la
                             comunicación abierta.
@@ -128,15 +164,22 @@ import SpriteIcon from "~/components/sprite-icon.astro";
                     </div>
 
                     <div
-                        class="flex flex-col items-center gap-4 rounded-lg border border-default bg-offset p-6 text-center"
+                        class="group flex animate-slideUp flex-col items-center gap-4 rounded-lg border border-default bg-offset p-6 text-center transition-all duration-300 hover:scale-105 hover:border-primary hover:shadow-xl"
+                        style="animation-delay: 400ms;"
                     >
-                        <div class="rounded-full border-2 border-primary p-4">
+                        <div
+                            class="group-hover:bg-primary/10 rounded-full border-2 border-primary p-4 transition-all duration-300 group-hover:scale-110"
+                        >
                             <Icon
                                 name="mdi:school"
-                                class="size-10 text-primary"
+                                class="size-10 text-primary transition-transform duration-300 group-hover:rotate-12"
                             />
                         </div>
-                        <h4 class="font-bold text-xl">Aprendizaje</h4>
+                        <h4
+                            class="font-bold transition-colors duration-300 text-xl group-hover:text-primary"
+                        >
+                            Aprendizaje
+                        </h4>
                         <p class="text-offset">
                             Nos mantenemos actualizados con las últimas
                             tecnologías y tendencias.
@@ -144,15 +187,22 @@ import SpriteIcon from "~/components/sprite-icon.astro";
                     </div>
 
                     <div
-                        class="flex flex-col items-center gap-4 rounded-lg border border-default bg-offset p-6 text-center"
+                        class="group flex animate-slideUp flex-col items-center gap-4 rounded-lg border border-default bg-offset p-6 text-center transition-all duration-300 hover:scale-105 hover:border-primary hover:shadow-xl"
+                        style="animation-delay: 500ms;"
                     >
-                        <div class="rounded-full border-2 border-primary p-4">
+                        <div
+                            class="group-hover:bg-primary/10 rounded-full border-2 border-primary p-4 transition-all duration-300 group-hover:scale-110"
+                        >
                             <Icon
                                 name="mdi:heart"
-                                class="size-10 text-primary"
+                                class="size-10 text-primary transition-transform duration-300 group-hover:rotate-12"
                             />
                         </div>
-                        <h4 class="font-bold text-xl">Pasión</h4>
+                        <h4
+                            class="font-bold transition-colors duration-300 text-xl group-hover:text-primary"
+                        >
+                            Pasión
+                        </h4>
                         <p class="text-offset">
                             Amamos lo que hacemos y eso se refleja en cada línea
                             de código.
@@ -163,22 +213,25 @@ import SpriteIcon from "~/components/sprite-icon.astro";
 
             <!-- Nuestro Equipo -->
             <div class="mt-24">
-                <h3 class="mb-12 text-center font-bold text-3xl">
+                <h3 class="mb-12 animate-fadeIn text-center font-bold text-3xl">
                     Nuestro Equipo
                 </h3>
                 <div class="grid gap-8 md:grid-cols-2">
                     <!-- Daniel Profile -->
                     <div
-                        class="flex flex-col rounded-xl border border-default bg-offset p-8 shadow-lg transition-transform hover:scale-[1.02]"
+                        class="group flex animate-slideUp flex-col rounded-xl border border-default bg-offset p-8 shadow-lg transition-all duration-500 hover:scale-[1.02] hover:border-primary hover:shadow-2xl"
+                        style="animation-delay: 0ms;"
                     >
                         <div class="mb-6 flex items-center gap-4">
                             <div
-                                class="bg-primary/20 flex size-16 items-center justify-center rounded-full font-bold text-primary text-3xl"
+                                class="bg-primary/20 group-hover:bg-primary/30 flex size-16 items-center justify-center rounded-full font-bold text-primary transition-all duration-300 text-3xl group-hover:scale-110"
                             >
                                 DF
                             </div>
                             <div>
-                                <h4 class="font-bold text-2xl">
+                                <h4
+                                    class="font-bold transition-colors duration-300 text-2xl group-hover:text-primary"
+                                >
                                     Daniel Enrique Flores García
                                 </h4>
                                 <span class="font-semibold text-primary"
@@ -266,16 +319,19 @@ import SpriteIcon from "~/components/sprite-icon.astro";
 
                     <!-- Jorge Profile -->
                     <div
-                        class="flex flex-col rounded-xl border border-default bg-offset p-8 shadow-lg transition-transform hover:scale-[1.02]"
+                        class="group flex animate-slideUp flex-col rounded-xl border border-default bg-offset p-8 shadow-lg transition-all duration-500 hover:scale-[1.02] hover:border-primary hover:shadow-2xl"
+                        style="animation-delay: 100ms;"
                     >
                         <div class="mb-6 flex items-center gap-4">
                             <div
-                                class="bg-primary/20 flex size-16 items-center justify-center rounded-full font-bold text-primary text-3xl"
+                                class="bg-primary/20 group-hover:bg-primary/30 flex size-16 items-center justify-center rounded-full font-bold text-primary transition-all duration-300 text-3xl group-hover:scale-110"
                             >
                                 JR
                             </div>
                             <div>
-                                <h4 class="font-bold text-2xl">
+                                <h4
+                                    class="font-bold transition-colors duration-300 text-2xl group-hover:text-primary"
+                                >
                                     Jorge Isaac Rodríguez Vargas
                                 </h4>
                                 <span class="font-semibold text-primary"
@@ -362,42 +418,77 @@ import SpriteIcon from "~/components/sprite-icon.astro";
 
             <!-- Stats -->
             <div class="mt-16 grid gap-8 md:grid-cols-4">
-                <div class="text-center">
-                    <div class="mb-2 font-bold text-primary text-5xl">10+</div>
+                <div
+                    class="animate-slideUp text-center"
+                    style="animation-delay: 0ms;"
+                >
+                    <div
+                        class="mb-2 font-bold text-primary transition-transform duration-300 text-5xl hover:scale-110"
+                    >
+                        10+
+                    </div>
                     <div class="text-offset">Años de Experiencia</div>
                 </div>
-                <div class="text-center">
-                    <div class="mb-2 font-bold text-primary text-5xl">100+</div>
+                <div
+                    class="animate-slideUp text-center"
+                    style="animation-delay: 100ms;"
+                >
+                    <div
+                        class="mb-2 font-bold text-primary transition-transform duration-300 text-5xl hover:scale-110"
+                    >
+                        100+
+                    </div>
                     <div class="text-offset">Proyectos Completados</div>
                 </div>
-                <div class="text-center">
-                    <div class="mb-2 font-bold text-primary text-5xl">50+</div>
+                <div
+                    class="animate-slideUp text-center"
+                    style="animation-delay: 200ms;"
+                >
+                    <div
+                        class="mb-2 font-bold text-primary transition-transform duration-300 text-5xl hover:scale-110"
+                    >
+                        50+
+                    </div>
                     <div class="text-offset">Clientes Satisfechos</div>
                 </div>
-                <div class="text-center">
-                    <div class="mb-2 font-bold text-primary text-5xl">20+</div>
+                <div
+                    class="animate-slideUp text-center"
+                    style="animation-delay: 300ms;"
+                >
+                    <div
+                        class="mb-2 font-bold text-primary transition-transform duration-300 text-5xl hover:scale-110"
+                    >
+                        20+
+                    </div>
                     <div class="text-offset">Desarrolladores Expertos</div>
                 </div>
             </div>
 
             <!-- CTA -->
-            <div class="mt-12 text-center">
+            <div
+                class="mt-12 animate-fadeIn text-center"
+                style="animation-delay: 400ms;"
+            >
                 <a
                     href="/contacto"
-                    class="hover:bg-primary/90 inline-flex items-center gap-3 rounded-lg bg-primary px-8 py-4 font-bold text-white transition-all hover:shadow-lg"
+                    class="hover:bg-primary/90 group inline-flex items-center gap-3 rounded-lg bg-primary px-8 py-4 font-bold text-white transition-all duration-300 hover:scale-105 hover:shadow-xl"
                 >
-                    <Icon name="mdi:email" class="size-6" />
+                    <Icon
+                        name="mdi:email"
+                        class="size-6 transition-transform duration-300 group-hover:rotate-12"
+                    />
                     <span>Trabajemos Juntos</span>
                 </a>
             </div>
         </ContentSection>
     </div>
 </BaseLayout>
-
 <script>
     // Function to update intro logo based on theme
     const updateIntroLogo = () => {
-        const logo = document.querySelector("#logo-intro use") as SVGUseElement;
+        const logo = document.querySelector(
+            "#logo-contacto use",
+        ) as SVGUseElement;
         if (!logo) return;
 
         const currentTheme = document.documentElement.dataset.theme;

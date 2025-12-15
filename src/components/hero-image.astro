@@ -1,15 +1,11 @@
 ---
 import { Image } from "astro:assets";
-import moonImage from "~/assets/moon.jpg";
-
-const widths = [450, 800, 1200];
-const sizes = "100vw";
+import heroImage from "~/assets/tech-footer.webp";
 ---
 
 <Image
-  class="h-full w-full object-cover"
-  src={moonImage}
-  widths={widths}
-  sizes={sizes}
-  alt="The ridged surface of the moon"
+    class="h-full w-full object-cover"
+    loading="eager"
+    src={heroImage}
+    alt="Tech background for TheRealDevs"
 />
